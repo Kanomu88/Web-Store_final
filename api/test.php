@@ -1,14 +1,36 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/shoelace-autoloader.js"></script>
 
-header('X-PHP: test');
-http_response_code($_GET['code'] ?? 200);
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Document</title>
+</head>
+<body class='bg-[antiquewhite] h-screen'>
+    <div class='fixed flex w-full justify-between mt-4'>
+        <img src='./assets/cdti.png' class='absolute left-16 w-32 h-32'>
+        <div class='flex mx-auto items-center justify-center'>
+            <div class='bg-blue-800 p-6 rounded-full mt-6'>
+                <span class='text-white text-xl'>ระบบยืม-คืน อุปกรณ์สโตร์ สาขาเทคโนโลยีสารสนเทศ</span>
+            </div>
+        </div>
+    </div>
 
-echo 'Test output';
+    <div class='flex flex-col justify-center items-center h-full'>
+       s
+        </div>
 
-var_dump(file_get_contents('php://input'));
-var_dump($_GET);
-var_dump($_POST);
-var_dump($_SERVER);
-var_dump($_ENV);
-var_dump($_FILES);
-var_dump(opcache_get_status());
+</div>
+
+<div class='flex mt-4 gap-4'>
+        <sl-button variant="primary">ตกลง</sl-button>
+        <sl-button variant="primary">สมัครสมาชิก</sl-button>
+</div>
+
+    </div>
+</body>
+</html>
