@@ -29,7 +29,7 @@
   <body class='bg-[antiquewhite] h-screen'>
     <div class='fixed w-full flex mt-6'>
       <div class='bg-blue-800 p-6 rounded-full  w-full mx-6 flex justify-between items-center'>
-        <span class='text-[antiquewhite] text-xl'>ระบบยืม-คืน อุปกรณ์สโตร์ สาขาเทคโนโลยีสารสนเทศ</span>
+        <span class='text-[antiquewhite] text-xl'>ระบบยืม-คืน อุปกรณ์สโตร์ สาขาเทคโนโลยีสารสนเทศ0</span>
         <div class='flex gap-2 justify-center items-center text-[antiquewhite]'>
         <sl-dropdown>
           <sl-button slot="trigger" pill caret>หมวดหมู่</sl-button>
