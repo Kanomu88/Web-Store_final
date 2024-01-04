@@ -21,7 +21,7 @@
     </div>
 
     <div class='flex flex-col justify-center items-center h-full'>
-        <h1 class='text-4xl mb-8'>เข้าสู่ระบบ</h1>
+        <h1 class='text-4xl mb-8'>สมัครสมาชิก</h1>
         <div class='flex gap-6'>
         <div class='flex flex-col justify-center gap-6'>
             <span class='text-xl'>ชื่อ-นามสกุล</span>
@@ -37,8 +37,8 @@
 </div>
 
 <div class='flex mt-4 gap-4'>
-        <sl-button variant="primary">ตกลง</sl-button>
-        <sl-button variant="primary">สมัครสมาชิก</sl-button>
+        <sl-button variant="primary">บันทึก</sl-button>
+        <sl-button variant="primary"><a href="login.php">ล็อคอิน</a></sl-button>
 </div>
 
     </div>
