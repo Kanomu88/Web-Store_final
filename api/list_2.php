@@ -22,8 +22,6 @@
             </div>
         </div>
     </div>
-    </div>
-
 
     <div class='flex flex-col justify-center items-center h-full'>
     <div class="container">
@@ -42,10 +40,8 @@
 
 <div class='flex mt-4 gap-4'>
     
-        <sl-button variant="primary" href="#">ย้อนกลับ</sl-button>
-        <sl-button variant="primary" href="list_2.php">ถัดไป</sl-button>
+        <sl-button variant="primary" href="index.php">เสร็จสิ้น</sl-button>
 </div>
-
 </body>
 <script type="module">
 var stdNo = 0;

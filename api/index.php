@@ -49,11 +49,14 @@
             <sl-menu-item> Prefix <sl-icon slot="prefix" name="gift"></sl-icon>
             </sl-menu-item>
             <sl-menu-item> Suffix Icon <sl-icon slot="suffix" name="heart"></sl-icon>
-            </sl-menu-item>
+            </sl-menu-item>v
           </sl-menu>
         </sl-dropdown>
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-        </div>
+        <a href="https://github.com/shoelace-style/shoelace" title="View Shoelace on GitHub" class="external-link" rel="noopener noreferrer" target="_blank">
+        <sl-icon name="shift" aria-hidden="true" library="default">
+        </sl-icon>
+      </a>
+      </div>
       </div>
     </div>
 
@@ -72,24 +75,9 @@
 
 
   <div slot="footer">
-  <sl-dialog id="dialog1" label="Dialog" class="dialog-overview">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <br /><br />
-  <div class="format-number-overview">
-
-  <sl-input type="number" value="0" label="Number to Format" style="max-width: 180px;"></sl-input>
-  </div>
-
-<style>
-  .button-group-toolbar sl-button-group:not(:last-of-type) {
-    margin-right: var(--sl-spacing-x-small);
-  }
-</style>
  
-  <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
-</sl-dialog>
 
-<sl-button id="openDialogButton1" variant="primary" pill>More Info </sl-button>
+<sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
 
 <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
  ชิ้น</span>
@@ -111,35 +99,7 @@
 
 
   <div slot="footer">
-  <sl-dialog id="dialog2" label="Dialog" class="dialog-overview">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <br /><br />
-  <div class="button-group-toolbar">
-  <sl-button-group label="Formatting">
-    <sl-tooltip content="ลดจำนวน">
-    <sl-button id="de1" onclick="decreaseProductCount()"><sl-icon name="dash-lg"></sl-icon></sl-button>
-    <sl-tooltip>
 
-    <sl-tooltip content="จำนวน">
-      <sl-button><p><span id="productCount2"> 0  </span></p> 
-      <sl-tooltip>
-</sl-button>
-    </sl-tooltip>
-    <sl-tooltip content="เพิ่มจำนวน">
-    <sl-button id="plus1" onclick="increaseProductCount()"><sl-icon name="plus-lg"></sl-icon></sl-button>
-    </sl-tooltip>
-  </sl-button-group>
-
-  
-</div>
-<style>
-  .button-group-toolbar sl-button-group:not(:last-of-type) {
-    margin-right: var(--sl-spacing-x-small);
-  }
-</style>
- 
-  <sl-button id="addButton" slot="footer" variant="primary">Add</sl-button>
-</sl-dialog>
 
 <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
 <span>คงเหลือ 20 ชิ้น</span>
@@ -160,36 +120,7 @@
 
 
   <div slot="footer">
-  <sl-dialog id="dialog3" label="Dialog" class="dialog-overview">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <br /><br />
-  <div class="button-group-toolbar">
-  <sl-button-group label="Formatting">
-    <sl-tooltip content="ลดจำนวน">
-    <sl-button id="de2" onclick="decreaseProductCount()"><sl-icon name="dash-lg"></sl-icon></sl-button>
-    <sl-tooltip>
-
-    <sl-tooltip content="จำนวน">
-      <sl-button><p><span id="productCount3"> 0  </span></p> 
-      <sl-tooltip>
-</sl-button>
-    </sl-tooltip>
-    <sl-tooltip content="เพิ่มจำนวน">
-    <sl-button id="plus2" onclick="increaseProductCount()"><sl-icon name="plus-lg"></sl-icon></sl-button>
-    </sl-tooltip>
-  </sl-button-group>
-
-  
-</div>
-<style>
-  .button-group-toolbar sl-button-group:not(:last-of-type) {
-    margin-right: var(--sl-spacing-x-small);
-  }
-</style>
  
-  <sl-button id="addButton" slot="footer" variant="primary">Add</sl-button>
-</sl-dialog>
-
 <sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
 <span>คงเหลือ 20 ชิ้น</span>
   </div>
@@ -209,36 +140,7 @@
 
 
   <div slot="footer">
-  <sl-dialog id="dialog4" label="Dialog" class="dialog-overview">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <br /><br />
-  <div class="button-group-toolbar">
-  <sl-button-group label="Formatting">
-    <sl-tooltip content="ลดจำนวน">
-    <sl-button id="de3" onclick="decreaseProductCount()"><sl-icon name="dash-lg"></sl-icon></sl-button>
-    <sl-tooltip>
-
-    <sl-tooltip content="จำนวน">
-      <sl-button><p><span id="productCount4"> 0  </span></p> 
-      <sl-tooltip>
-</sl-button>
-    </sl-tooltip>
-    <sl-tooltip content="เพิ่มจำนวน">
-    <sl-button id="plus3" onclick="increaseProductCount()"><sl-icon name="plus-lg"></sl-icon></sl-button>
-    </sl-tooltip>
-  </sl-button-group>
-
-  
-</div>
-<style>
-  .button-group-toolbar sl-button-group:not(:last-of-type) {
-    margin-right: var(--sl-spacing-x-small);
-  }
-</style>
  
-  <sl-button id="addButton" slot="footer" variant="primary">Add</sl-button>
-</sl-dialog>
-
 <sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
 <span>คงเหลือ 20 ชิ้น</span>
   </div>
