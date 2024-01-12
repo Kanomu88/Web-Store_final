@@ -1,20 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en">
-  
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/themes/light.css" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/shoelace-autoloader.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/button/button.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/button-group/button-group.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/main.css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ela Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
     <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
@@ -27,33 +18,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets2/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="assets2/css/style.css">
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
-<style>
-  .card-overview {
-    max-width: 300px;
-  }
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/shoelace-autoloader.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/button/button.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/button-group/button-group.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-  .card-overview small {
-    color: var(--sl-color-neutral-500);
-  }
 
-  .card-overview [slot='footer'] {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-  }
-  .icon {
-    background: rgb(30 64 175 / var(--tw-bg-opacity));
-    font-size: 2rem;
-    display: flex;
-  }
-  #weatherWidget .currentDesc {
+   <style>
+    #weatherWidget .currentDesc {
         color: #ffffff!important;
     }
         .traffic-chart {
@@ -86,183 +68,346 @@
         #cellPaiChart{
             height: 160px;
         }
-
-
-</style>
-    <title>Document</title>
-  </head>
-  <body >
-    <div class='fixed w-full flex mt-6'>
-      <div class='bg-blue-800 p-6 rounded-full  w-full mx-6 flex justify-between items-center'>
-        <span class='text-[antiquewhite] text-xl'>ระบบยืม-คืน อุปกรณ์สโตร์ สาขาเทคโนโลยีสารสนเทศ</span>
-        <div class='flex gap-2 justify-center items-center text-[antiquewhite]'>
-        <sl-dropdown>
-          <sl-button slot="trigger" pill caret>หมวดหมู่</sl-button>
-          <sl-menu>
-            <sl-menu-item>Dropdown Item 1
-            <sl-menu slot="submenu">
-        <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
-        <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
-        <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
-      </sl-menu>
-            </sl-menu-item>
-            <sl-menu-item>Dropdown Item 2
-            <sl-menu slot="submenu">
-        <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
-        <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
-        <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
-      </sl-menu>
-            </sl-menu-item>
-            <sl-menu-item>Dropdown Item 3
-            <sl-menu slot="submenu">
-        <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
-        <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
-        <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
-      </sl-menu>
-            </sl-menu-item>
-
-        </sl-dropdown>
-        <a href="list.php" class = "icon"><ion-icon name="cart-outline"></ion-icon>
-        </a>
-      </a>
-      </div>
-      </div>
-    </div>
-
-
-    <div class='pt-32 grid grid-cols-4 items-center gap-y-4'>
-        <div class='flex items-center justify-center'>
-        <sl-card class="card-overview">
-  <img
-    slot="image"
-    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-    
-  />
-  <strong>Mittens</strong><br />
-
-
-
-  <div slot="footer">
- 
-
-<sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
-
-<span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
- ชิ้น</span>
-
-  </div>
-</sl-card>
-</div>
-
-<div class='flex items-center justify-center'>
-        <sl-card class="card-overview">
-  <img
-    slot="image"
-    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-    
-  />
-  <strong>Mittens</strong><br />
-
-
-
-  <div slot="footer">
-
-
-<sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
-<span>คงเหลือ 20 ชิ้น</span>
-  </div>
-</sl-card>
-</div>
-
-<div class='flex items-center justify-center'>
-        <sl-card class="card-overview">
-  <img
-    slot="image"
-    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-    
-  />
-  <strong>Mittens</strong><br />
-
-
-
-  <div slot="footer">
- 
-<sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
-<span>คงเหลือ 20 ชิ้น</span>
-  </div>
-</sl-card>
-</div>
-
-<div class='flex items-center justify-center'>
-        <sl-card class="card-overview">
-  <img
-    slot="image"
-    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-    
-  />
-  <strong>Mittens</strong><br />
-
-
-
-  <div slot="footer">
- 
-<sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
-<span>คงเหลือ 20 ชิ้น</span>
-  </div>
-</sl-card>
-
-</div>
-
-    </div>
-    
-  </body>
-  <script type="module">
-  function setupDialog(dialogId, openButtonId, addButtonId, productCountId, decreaseButtonId, plusButtonId) {
-    const dialog = document.getElementById(dialogId);
-    const openButton = document.getElementById(openButtonId);
-    const addButton = document.getElementById('addButton');
-    const productCountSpan = document.getElementById(productCountId);
-    const formatter = document.getElementById('formattedValue');
-    const input = document.querySelector('.format-number-overview sl-input');
-    let productCount = 0;
-    
-    
-
-    openButton.addEventListener('click', () => {
-      dialog.show();
-    });
-
-    addButton.addEventListener('click', () => {
-      const subtractedValue = formatter.value - (parseInt(input.value) || 0);
-      formatter.value = subtractedValue;
-      dialog.hide();
-    });
-
-    window[`increaseProductCount${plusButtonId}`] = function() {
-      productCount++;
-      updateProductCount();
-    };
-
-    window[`decreaseProductCount${decreaseButtonId}`] = function() {
-      if (productCount > 0) {
-        productCount--;
-        updateProductCount();
-      }
-    };
-
-    function updateProductCount() {
-      productCountSpan.textContent = productCount;
-    }
+        .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .grid {
+    display: grid;
+        }
+        .row {
+            margin-top: 3rem;
+        }
+         .card-overview {
+    max-width: 300px;
   }
-  setupDialog('dialog1', 'openDialogButton1', 'addbutton', 'productCount', 'de', 'plus',);
-  setupDialog('dialog2', 'openDialogButton2', 'addButton', 'productCount2', 'de1', 'plus1');
-  setupDialog('dialog3', 'openDialogButton3', 'addButton', 'productCount3', 'de2', 'plus2');
-  setupDialog('dialog4', 'openDialogButton4', 'addButton', 'productCount4', 'de3', 'plus3');
-</script>
+  .right-panel .navbar-brand {
+    width: 140px;
+}
+    </style>
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li>
+                    <li class="menu-title">UI elements</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Components</a>
+                        <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
+
+                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
+                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
+                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
+                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
+                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-title">Icons</li><!-- /.menu-title -->
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-title">Extras</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./"><img src="https://www.cdti.ac.th/wp-content/uploads/2023/06/Asset-1eme.svg" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="images2/logo2.png" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-search"></i></button>
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+
+
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="images2/admin.jpg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
+
+                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <div class="content">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <div class="row">
+                    <div class='grid grid-cols-4 items-center'>
+                        <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                
+                <sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
+                
+                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
+                 ชิ้น</span>
+                
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                
+                
+                <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                <sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                <sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                
+                </div>
+                
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='grid grid-cols-4 items-center'>
+                        <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                
+                <sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
+                
+                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
+                 ชิ้น</span>
+                
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                
+                
+                <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                <sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                <sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                
+                </div>
+                
+                    </div>
+                </div>
+                
+ 
+    <!-- /#right-panel -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="assets2/js/main.js"></script>
+<!--     <script src="https://cdn.tailwindcss.com"></script>
+ -->
+
+</body>
 </html>
-<?php
-phpinfo();
