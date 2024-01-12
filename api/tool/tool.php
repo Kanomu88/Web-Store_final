@@ -56,10 +56,10 @@
     </div>
 
     <div class='flex gap-4 mt-8'>
-        <sl-button variant="primary" href="index.php" >ย้อนกลับ</sl-button>
+        <sl-button variant="primary" href="/api/index.php" >ย้อนกลับ</sl-button>
     
         
-        <sl-button variant="primary" href="index.php">ตกลง</sl-button>
+        <sl-button variant="primary" href="/api/index.php">ตกลง</sl-button>
     </div>
 
 </div>

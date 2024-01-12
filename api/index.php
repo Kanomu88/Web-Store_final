@@ -10,6 +10,8 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/button-group/button-group.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,11 +29,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
   }
+  .icon {
+    background: rgb(30 64 175 / var(--tw-bg-opacity));
+    font-size: 2rem;
+    display: flex;
+  }
+
 </style>
     <title>Document</title>
   </head>
-  <body class='bg-[antiquewhite] h-screen'>
+  <body >
     <div class='fixed w-full flex mt-6'>
       <div class='bg-blue-800 p-6 rounded-full  w-full mx-6 flex justify-between items-center'>
         <span class='text-[antiquewhite] text-xl'>ระบบยืม-คืน อุปกรณ์สโตร์ สาขาเทคโนโลยีสารสนเทศ</span>
@@ -39,22 +48,31 @@
         <sl-dropdown>
           <sl-button slot="trigger" pill caret>หมวดหมู่</sl-button>
           <sl-menu>
-            <sl-menu-item>Dropdown Item 1</sl-menu-item>
-            <sl-menu-item>Dropdown Item 2</sl-menu-item>
-            <sl-menu-item>Dropdown Item 3</sl-menu-item>
-            <sl-divider></sl-divider>
-            <sl-menu-item type="checkbox" checked>Checkbox</sl-menu-item>
-            <sl-menu-item disabled>Disabled</sl-menu-item>
-            <sl-divider></sl-divider>
-            <sl-menu-item> Prefix <sl-icon slot="prefix" name="gift"></sl-icon>
+            <sl-menu-item>Dropdown Item 1
+            <sl-menu slot="submenu">
+        <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
+        <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
+        <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
+      </sl-menu>
             </sl-menu-item>
-            <sl-menu-item> Suffix Icon <sl-icon slot="suffix" name="heart"></sl-icon>
-            </sl-menu-item>v
-          </sl-menu>
+            <sl-menu-item>Dropdown Item 2
+            <sl-menu slot="submenu">
+        <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
+        <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
+        <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
+      </sl-menu>
+            </sl-menu-item>
+            <sl-menu-item>Dropdown Item 3
+            <sl-menu slot="submenu">
+        <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
+        <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
+        <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
+      </sl-menu>
+            </sl-menu-item>
+
         </sl-dropdown>
-        <a href="https://github.com/shoelace-style/shoelace" title="View Shoelace on GitHub" class="external-link" rel="noopener noreferrer" target="_blank">
-        <sl-icon name="shift" aria-hidden="true" library="default">
-        </sl-icon>
+        <a href="list.php" class = "icon"><ion-icon name="cart-outline"></ion-icon>
+        </a>
       </a>
       </div>
       </div>

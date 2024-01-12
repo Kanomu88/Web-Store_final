@@ -42,7 +42,7 @@
 
 <div class='flex mt-4 gap-4'>
     
-        <sl-button variant="primary" href="#">ย้อนกลับ</sl-button>
+        <sl-button variant="primary" href="index.php">ย้อนกลับ</sl-button>
         <sl-button variant="primary" href="list_2.php">ถัดไป</sl-button>
 </div>
 
