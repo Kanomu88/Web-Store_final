@@ -183,9 +183,7 @@ canvas {
         list-style:none;
         padding-bottom: 20px;
     }
-    .msg-container { 
-         
-    }
+
     .avatar {  
         width: 64px;
         float: left;
@@ -560,12 +558,7 @@ aside.left-panel {
                 }
                 &.menu-item-has-children {
                     overflow: hidden;
-                    a {
-                        // &:before {
-                        //     content: '';
-                        //     display: none;
-                        // }
-                    }
+
                     ul {
                         padding-left: 0;
                     }
@@ -1552,7 +1545,6 @@ header .form-inline {
                 color: #878787;
                 display: inline-block;
                 font-size: 16px;
-                float: left;
                 padding: 0 7px;
                 width: inherit;
                 text-align: center;
@@ -1620,7 +1612,6 @@ header .form-inline {
     left: 40%;
 }
 .twt-feed {
-    -webkit-border-radius: 4px 4px 0 0;
     color: #FFFFFF;
     padding: 40px 10px 10px;
     position: relative;
@@ -2573,7 +2564,6 @@ footer.site-footer {
         }
         &.fa {
             display: inline-block;
-            float: left !important;
         }
     }
     #traffic-chart {

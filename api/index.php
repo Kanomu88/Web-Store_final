@@ -11,8 +11,8 @@
     <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<!--     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+ -->    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
@@ -79,10 +79,23 @@
         }
          .card-overview {
     max-width: 300px;
-  }
+        }
   .right-panel .navbar-brand {
     width: 140px;
+    margin-top: 1rem;
+      }
+    .animated-fadeIn{
+        row-gap: 1rem;
+         column-gap: 1rem;
+    }
+    .user-area .user-avatar {
+    border-radius: 50%!important;
 }
+.user-area .dropdown-toggle:before {
+
+    width: 7px;
+    height: 7px;
+
     </style>
 </head>
 
@@ -93,75 +106,19 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a ><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">UI elements</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Components</a>
-                        <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
-
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-title">Icons</li><!-- /.menu-title -->
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                        </ul>
-                    </li>
                     <li>
                         <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                        </ul>
+                    <li class="menu-title">Icons</li><!-- /.menu-title -->
+                    <li>
+                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
                     </li>
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title">Extras</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                        </ul>
+                    <li class="menu-title">Sytem</li><!-- /.menu-title -->
+                    <li>
+                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Logout </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -180,42 +137,17 @@
                 </div>
             </div>
             <div class="top-right">
-                <div class="header-menu">
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
-                        </div>
-
-
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
-                        </div>
-                    </div>
-
-                </div>
+  
             </div>
         </header>
         <!-- /#header -->
         <!-- Content -->
         <div class="content">
             <!-- Animated -->
-            <div class="animated fadeIn">
+            <div class="animated-fadeIn">
                 <!-- Widgets  -->
+                <div class="container">
+
                 <div class="row">
                     <div class='grid grid-cols-4 items-center'>
                         <div class='flex items-center justify-center'>
@@ -396,6 +328,188 @@
                 
                     </div>
                 </div>
+                <div class="row">
+                    <div class='grid grid-cols-4 items-center'>
+                        <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                
+                <sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
+                
+                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
+                 ชิ้น</span>
+                
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                
+                
+                <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                <sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                <sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                
+                </div>
+                
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='grid grid-cols-4 items-center'>
+                        <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                
+                <sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
+                
+                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
+                 ชิ้น</span>
+                
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                
+                
+                <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                <sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                </div>
+                
+                <div class='flex items-center justify-center'>
+                        <sl-card class="card-overview">
+                  <img
+                    slot="image"
+                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+                    
+                  />
+                  <strong>Mittens</strong><br />
+                
+                
+                
+                  <div slot="footer">
+                 
+                <sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
+                <span>คงเหลือ 20 ชิ้น</span>
+                  </div>
+                </sl-card>
+                
+                </div>
+                
+                    </div>
+                </div>
+                </div>
+
                 
  
     <!-- /#right-panel -->
