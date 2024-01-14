@@ -1,46 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/themes/light.css" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.0/cdn/shoelace-autoloader.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ela Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/main.css">
-    <title>Document</title>
+    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 </head>
-<body class='bg-[antiquewhite] h-screen'>
-    <div class='fixed flex w-full justify-between mt-4'>
-        <img src='./assets/cdti.png' class='absolute left-16 w-32 h-32'>
-        <div class='flex mx-auto items-center justify-center'>
-            <div class='bg-blue-800 p-6 rounded-full mt-6'>
-                <span class='text-white text-xl'>ระบบยืม-คืน อุปกรณ์สโตร์ สาขาเทคโนโลยีสารสนเทศ</span>
+<body class="bg-white">
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <img class="align-content" src="https://www.cdti.ac.th/wp-content/uploads/2023/06/Asset-1eme.svg" alt="">
+                    </a>
+                </div>
+                <div class="login-form">
+                    <form>
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input type="email" class="form-control" placeholder="User Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Agree the terms and policy
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30"onClick="window.location.href='login.php';">Register</button>
+
+                        <div class="register-link m-t-15 text-center">
+                            <p>Already have account ? <a href="#"> Sign in</a></p>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class='flex flex-col justify-center items-center h-full'>
-        <h1 class='text-4xl mb-8'>สมัครสมาชิก</h1>
-        <div class='flex gap-6'>
-        <div class='flex flex-col justify-center gap-6'>
-            <span class='text-xl'>ชื่อ-นามสกุล</span>
-            <span class='text-xl'>รหัสประจำตัวนักเรียน</span>
-            <span class='text-xl'>Password</span>
-        </div>
-        <div class='flex flex-col justify-center items-center gap-4 w-full'>
-            <sl-input type="text" class='w-full' pill></sl-input>
-            <sl-input type="text" class='w-full' pill></sl-input>
-            <sl-input type="password" class='w-full' password-toggle pill></sl-input>
-        </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
-</div>
-
-<div class='flex mt-4 gap-4'>
-        <sl-button variant="primary">บันทึก</sl-button>
-        <sl-button variant="primary"><a href="login.php">ล็อคอิน</a></sl-button>
-</div>
-
-    </div>
 </body>
 </html>
