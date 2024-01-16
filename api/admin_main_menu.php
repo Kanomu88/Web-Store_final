@@ -71,6 +71,17 @@
   .right-panel .navbar-brand {
     width: 140px;
 }
+.user-area .user-avatar {
+    border-radius: 50%!important;
+}
+.user-area .count {
+    position: absolute;
+    top: 1.8rem;
+    left: 3rem;
+}
+.user-area .user-avatar {
+  margin-top: 5px;
+}
     </style>
 </head>
 
@@ -81,41 +92,24 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a ><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    <a href="admin_main_menu.php" id='menuToggle'class='menuToggle'><i class="menu-icon fa fa-bars"></i>Home </a>
                     </li>
-                    <li class="menu-title">อุปกรณ์สโตร์</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>ยืมอุปกรณ์</a>
-                        <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
-
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                        </ul>
+                    <li class="menu-title">Equipment</li><!-- /.menu-title -->
+                    <li>
+                        <a href="admin_list_borrowers.php"> <i class="menu-icon fa fa-id-card-o"></i>รายชื่อผู้ยืม</a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>คืนอุปกรณ์</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
+                    <li>
+                        <a href="admin_list_equipment.php"> <i class="menu-icon fa fa-cogs"></i>อุปกรณ์ทั้งหมด</a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>ยอดการยืม</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
+                    <li>
+                        <a href="admin_list_History.php"> <i class="menu-icon fa fa-tasks"></i>ประวัติการยืม</a>
                     </li>
 
-
- 
+                    <li class="menu-title">Sytem</li><!-- /.menu-title -->
+                    <li>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-sign-in"></i>Logout </a>
+                    </li>
+                </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside>
@@ -128,25 +122,15 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="./"><img src="https://www.cdti.ac.th/wp-content/uploads/2023/06/Asset-1eme.svg" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
             <div class="top-right">
                 <div class="header-menu">
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
-                        </div>
+                <div class="user-area dropdown float-right">
+                        <a href="list.php"  > <span class="count">13</span>
+                            <img class="user-avatar rounded-circle" src="https://e7.pngegg.com/pngimages/772/45/png-clipart-shopping-cart-shopping-centre-icon-shopping-cart-text-retail.png" alt="User Avatar">
+                        
+                          </a>
                     </div>
 
                 </div>
@@ -238,7 +222,7 @@
                 <!-- Orders -->
                 <div class="orders">
                     <div class="row">
-                        <div class="col-xl-8">
+                        <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="box-title">Orders </h4>

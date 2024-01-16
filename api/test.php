@@ -31,6 +31,7 @@
 
 
     <style>
+
      #weatherWidget .currentDesc {
         color: #ffffff!important;
     }
@@ -70,11 +71,42 @@
 div#text-1 {
     text-align: center;
 }
+div#text-1 .border-1{
+    font-weight: bold;
+}
 div#buttom-click {
     text-align: center;
 }
 div#count1 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+div#count1 span {
+    padding-right: 1rem;
+}
+div#count2 span {
+    padding-right: 2rem;
+}
+div#count2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+div#picandspan {
     text-align: center;
+    margin-bottom: 2rem;
+}
+div#picandspan .boder{
+    font-weight: bold;
+
+}
+div#picandspan img {
+    margin-top: 2rem;
+    border: solid ;
 }
     </style>
 </head>
@@ -86,7 +118,7 @@ div#count1 {
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a id='menuToggle'class='menuToggle'><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">UI elements</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
@@ -169,45 +201,37 @@ div#count1 {
                 <div class="navbar-header">
                     <a class="navbar-brand" href="./"><img src="https://www.cdti.ac.th/wp-content/uploads/2023/06/Asset-1eme.svg" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                    <a id="menuToggle" class="menutoggle"></a>
                 </div>
             </div>
-            <div class="top-right">
-                <div class="header-menu">
 
-
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
         </header>
         <!-- /#header -->
         <!-- Content -->
         <div class="content">
-            <div>
-            <span class='text-2xl font-bold mb-4'>คีมปากจิ้งจก</span>
-
+            <div id='picandspan' class="picandspan">
+            <span id='boder' class='boder'>คีมปากจิ้งจก</span>
+            <div class='img1'>
+    <img class='border-2 border-black' src="tool/assets/คีม.png"  />
+    </div>
             </div>
 
         <div class="container">
-        <div class='pt-32 flex flex-col items-center justify-center'>
-    <img class='border-2 border-black' src="tool/assets/คีม.png"  />
-    </div>
+
 
 <div id="text-1" class="text-1">    
-    <span >แนะนำการใช้งาน</span>
-<br>
+    <span id='border-1' class='border-1'>แนะนำการใช้งาน</span>
+<br><br>
+
     <span class='w-[40%] mt-2'>ใช้สำหรับจับโลหะแบนหรือสายไฟ ปากคีมมีลักษณะเรียวแหลม 
 และ มีขนาดเล็ก เหมาะกับการใช้งานในที่แคบ และ งานไฟฟ้า</span>
 </div>
     <div id='count1' class='count1'>
             <span>จำนวนยอดคงเหลือ</span>
             <sl-input type="number" value="12" style="max-width: 180px;" readonly pill></sl-input>
+            </div>
+
+            <div id='count2' class='count2'>
             <span>จำนวนที่ต้องการ</span>
             <sl-input type="number" value="1" style="max-width: 180px;" pill></sl-input>
         </div>

@@ -91,11 +91,14 @@
     .user-area .user-avatar {
     border-radius: 50%!important;
 }
-.user-area .dropdown-toggle:before {
-
-    width: 7px;
-    height: 7px;
-
+.user-area .count {
+    position: absolute;
+    top: 1.8rem;
+    left: 3rem;
+}
+.user-area .user-avatar {
+  margin-top: 5px;
+}
     </style>
 </head>
 
@@ -106,19 +109,16 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a ><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    <a id='menuToggle'class='menuToggle'><i class="menu-icon fa fa-bars"></i>Home </a>
                     </li>
-                    <li class="menu-title">UI elements</li><!-- /.menu-title -->
+                    <li class="menu-title">Equipment</li><!-- /.menu-title -->
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-tasks"></i>ยืม-คืนอุปกรณ์ </a>
                     </li>
-                    <li class="menu-title">Icons</li><!-- /.menu-title -->
-                    <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                    </li>
+
                     <li class="menu-title">Sytem</li><!-- /.menu-title -->
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Logout </a>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-sign-in"></i>Logout </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -133,12 +133,14 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="./"><img src="https://www.cdti.ac.th/wp-content/uploads/2023/06/Asset-1eme.svg" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
-            <div class="top-right">
-  
-            </div>
+            <div class="user-area dropdown float-right">
+                        <a href="user_cart-list.php"  > <span class="count">99</span>
+                            <img class="user-avatar rounded-circle" src="https://e7.pngegg.com/pngimages/772/45/png-clipart-shopping-cart-shopping-centre-icon-shopping-cart-text-retail.png" alt="User Avatar">
+                        
+                          </a>
+                    </div>
         </header>
         <!-- /#header -->
         <!-- Content -->
@@ -163,9 +165,23 @@
                 
                 
                   <div slot="footer">
-                 
-                
-                <sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
+                  <sl-dialog id="dialog" label="Dialog" class="dialog-overview">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br /><br />
+                <div class="format-number-overview">
+
+              <sl-input type="number" value="0" label="Number to Format" style="max-width: 180px;"></sl-input>
+          </div>
+
+            <style>
+               .button-group-toolbar sl-button-group:not(:last-of-type) {
+                 margin-right: var(--sl-spacing-x-small);
+                     }
+            </style>
+ 
+                    <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
+                   </sl-dialog>
+                <sl-button id="openDialogButton" variant="primary" pill>More Info </sl-button>
                 
                 <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
                  ชิ้น</span>
@@ -187,14 +203,30 @@
                 
                 
                   <div slot="footer">
+                  <sl-dialog id="dialog" label="Dialog" class="dialog-overview">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br /><br />
+                <div class="format-number-overview">
+
+              <sl-input type="number" value="0" label="Number to Format" style="max-width: 180px;"></sl-input>
+          </div>
+
+            <style>
+               .button-group-toolbar sl-button-group:not(:last-of-type) {
+                 margin-right: var(--sl-spacing-x-small);
+                     }
+            </style>
+ 
+                    <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
+                   </sl-dialog>
+                <sl-button id="openDialogButton" variant="primary" pill>More Info </sl-button>
                 
+                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
+                 ชิ้น</span>
                 
-                <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
                   </div>
                 </sl-card>
                 </div>
-                
                 <div class='flex items-center justify-center'>
                         <sl-card class="card-overview">
                   <img
@@ -208,13 +240,30 @@
                 
                 
                   <div slot="footer">
-                 
-                <sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
+                  <sl-dialog id="dialog" label="Dialog" class="dialog-overview">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br /><br />
+                <div class="format-number-overview">
+
+              <sl-input type="number" value="0" label="Number to Format" style="max-width: 180px;"></sl-input>
+          </div>
+
+            <style>
+               .button-group-toolbar sl-button-group:not(:last-of-type) {
+                 margin-right: var(--sl-spacing-x-small);
+                     }
+            </style>
+ 
+                    <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
+                   </sl-dialog>
+                <sl-button id="openDialogButton" variant="primary" pill>More Info </sl-button>
+                
+                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
+                 ชิ้น</span>
+                
                   </div>
                 </sl-card>
                 </div>
-                
                 <div class='flex items-center justify-center'>
                         <sl-card class="card-overview">
                   <img
@@ -228,16 +277,36 @@
                 
                 
                   <div slot="footer">
-                 
-                <sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
+                  <sl-dialog id="dialog" label="Dialog" class="dialog-overview">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br /><br />
+                <div class="format-number-overview">
+
+              <sl-input type="number" value="0" label="Number to Format" style="max-width: 180px;"></sl-input>
+          </div>
+
+            <style>
+               .button-group-toolbar sl-button-group:not(:last-of-type) {
+                 margin-right: var(--sl-spacing-x-small);
+                     }
+            </style>
+ 
+                    <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
+                   </sl-dialog>
+                <sl-button id="openDialogButton" variant="primary" pill>More Info </sl-button>
+                
+                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
+                 ชิ้น</span>
+                
                   </div>
                 </sl-card>
-                
                 </div>
-                
+                </div>
+
                     </div>
                 </div>
+                </div>
+
                 <div class="row">
                     <div class='grid grid-cols-4 items-center'>
                         <div class='flex items-center justify-center'>
@@ -253,99 +322,23 @@
                 
                 
                   <div slot="footer">
-                 
-                
-                <sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
-                
-                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
-                 ชิ้น</span>
-                
-                  </div>
-                </sl-card>
-                </div>
-                
-                <div class='flex items-center justify-center'>
-                        <sl-card class="card-overview">
-                  <img
-                    slot="image"
-                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                    
-                  />
-                  <strong>Mittens</strong><br />
-                
-                
-                
-                  <div slot="footer">
-                
-                
-                <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
-                  </div>
-                </sl-card>
-                </div>
-                
-                <div class='flex items-center justify-center'>
-                        <sl-card class="card-overview">
-                  <img
-                    slot="image"
-                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                    
-                  />
-                  <strong>Mittens</strong><br />
-                
-                
-                
-                  <div slot="footer">
-                 
-                <sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
-                  </div>
-                </sl-card>
-                </div>
-                
-                <div class='flex items-center justify-center'>
-                        <sl-card class="card-overview">
-                  <img
-                    slot="image"
-                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                    
-                  />
-                  <strong>Mittens</strong><br />
-                
-                
-                
-                  <div slot="footer">
-                 
-                <sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
-                  </div>
-                </sl-card>
-                
-                </div>
-                
-                    </div>
-                </div>
-                <div class="row">
-                    <div class='grid grid-cols-4 items-center'>
-                        <div class='flex items-center justify-center'>
-                        <sl-card class="card-overview">
-                  <img
-                    slot="image"
-                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                    
-                  />
-                  <strong>Mittens</strong><br />
-                
-                
-                
-                  <div slot="footer">
-                 
-                
-                <sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
+                  <sl-dialog id="dialog" label="Dialog" class="dialog-overview">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br /><br />
+                <div class="format-number-overview">
+
+              <sl-input type="number" value="0" label="Number to Format" style="max-width: 180px;"></sl-input>
+          </div>
+
+            <style>
+               .button-group-toolbar sl-button-group:not(:last-of-type) {
+                 margin-right: var(--sl-spacing-x-small);
+                     }
+            </style>
+ 
+                    <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
+                   </sl-dialog>
+                <sl-button id="openDialogButton" variant="primary" pill>More Info </sl-button>
                 
                 <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
                  ชิ้น</span>
@@ -367,75 +360,23 @@
                 
                 
                   <div slot="footer">
-                
-                
-                <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
-                  </div>
-                </sl-card>
-                </div>
-                
-                <div class='flex items-center justify-center'>
-                        <sl-card class="card-overview">
-                  <img
-                    slot="image"
-                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                    
-                  />
-                  <strong>Mittens</strong><br />
-                
-                
-                
-                  <div slot="footer">
-                 
-                <sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
-                  </div>
-                </sl-card>
-                </div>
-                
-                <div class='flex items-center justify-center'>
-                        <sl-card class="card-overview">
-                  <img
-                    slot="image"
-                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                    
-                  />
-                  <strong>Mittens</strong><br />
-                
-                
-                
-                  <div slot="footer">
-                 
-                <sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
-                  </div>
-                </sl-card>
-                
-                </div>
-                
-                    </div>
-                </div>
-                <div class="row">
-                    <div class='grid grid-cols-4 items-center'>
-                        <div class='flex items-center justify-center'>
-                        <sl-card class="card-overview">
-                  <img
-                    slot="image"
-                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                    
-                  />
-                  <strong>Mittens</strong><br />
-                
-                
-                
-                  <div slot="footer">
-                 
-                
-                <sl-button variant="primary" href= "tool/tool.php" pill>More Info </sl-button>
+                  <sl-dialog id="dialog" label="Dialog" class="dialog-overview">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br /><br />
+                <div class="format-number-overview">
+
+              <sl-input type="number" value="0" label="Number to Format" style="max-width: 180px;"></sl-input>
+          </div>
+
+            <style>
+               .button-group-toolbar sl-button-group:not(:last-of-type) {
+                 margin-right: var(--sl-spacing-x-small);
+                     }
+            </style>
+ 
+                    <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
+                   </sl-dialog>
+                <sl-button id="openDialogButton" variant="primary" pill>More Info </sl-button>
                 
                 <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
                  ชิ้น</span>
@@ -443,7 +384,6 @@
                   </div>
                 </sl-card>
                 </div>
-                
                 <div class='flex items-center justify-center'>
                         <sl-card class="card-overview">
                   <img
@@ -457,14 +397,30 @@
                 
                 
                   <div slot="footer">
+                  <sl-dialog id="dialog" label="Dialog" class="dialog-overview">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br /><br />
+                <div class="format-number-overview">
+
+              <sl-input type="number" value="0" label="Number to Format" style="max-width: 180px;"></sl-input>
+          </div>
+
+            <style>
+               .button-group-toolbar sl-button-group:not(:last-of-type) {
+                 margin-right: var(--sl-spacing-x-small);
+                     }
+            </style>
+ 
+                    <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
+                   </sl-dialog>
+                <sl-button id="openDialogButton" variant="primary" pill>More Info </sl-button>
                 
+                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
+                 ชิ้น</span>
                 
-                <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
                   </div>
                 </sl-card>
                 </div>
-                
                 <div class='flex items-center justify-center'>
                         <sl-card class="card-overview">
                   <img
@@ -478,37 +434,36 @@
                 
                 
                   <div slot="footer">
-                 
-                <sl-button id="openDialogButton3" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
+                  <sl-dialog id="dialog" label="Dialog" class="dialog-overview">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br /><br />
+                <div class="format-number-overview">
+
+              <sl-input type="number" value="0" label="Number to Format" style="max-width: 180px;"></sl-input>
+          </div>
+
+            <style>
+               .button-group-toolbar sl-button-group:not(:last-of-type) {
+                 margin-right: var(--sl-spacing-x-small);
+                     }
+            </style>
+ 
+                    <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
+                   </sl-dialog>
+                <sl-button id="openDialogButton" variant="primary" pill>More Info </sl-button>
+                
+                <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
+                 ชิ้น</span>
+                
                   </div>
                 </sl-card>
                 </div>
-                
-                <div class='flex items-center justify-center'>
-                        <sl-card class="card-overview">
-                  <img
-                    slot="image"
-                    src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                    alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                    
-                  />
-                  <strong>Mittens</strong><br />
-                
-                
-                
-                  <div slot="footer">
-                 
-                <sl-button id="openDialogButton4" variant="primary" pill>More Info </sl-button>
-                <span>คงเหลือ 20 ชิ้น</span>
-                  </div>
-                </sl-card>
-                
                 </div>
-                
+
                     </div>
                 </div>
                 </div>
+
 
                 
  
@@ -522,6 +477,31 @@
     <script src="assets/js/main.js"></script>
 <!--     <script src="https://cdn.tailwindcss.com"></script>
  -->
+ <script type="module">
+  function setupDialog(dialogId, openButtonId, addButtonId, productCountId, decreaseButtonId, plusButtonId) {
+    const dialog = document.getElementById(dialogId);
+    const openButton = document.getElementById(openButtonId);
+    const addButton = document.getElementById('addButton');
+    const productCountSpan = document.getElementById(productCountId);
+    const formatter = document.getElementById('formattedValue');
+    const input = document.querySelector('.format-number-overview sl-input');
+    let productCount = 0;
+    
+    
+
+    openButton.addEventListener('click', () => {
+      dialog.show();
+    });
+
+    addButton.addEventListener('click', () => {
+      const subtractedValue = formatter.value - (parseInt(input.value) || 0);
+      formatter.value = subtractedValue;
+      dialog.hide();
+    });
+  }
+  setupDialog('dialog', 'openDialogButton', 'addbutton', 'productCount');
+
+</script>
 
 </body>
 </html>
