@@ -40,11 +40,11 @@
                     <form>
                         <div class="form-group">
                             <label>รหัสนักเรียน</label>
-                            <input type="email" class="form-control" placeholder="กรอกรหัสนักเรียน">
+                            <input type="email" class="form-control" id="email" placeholder="กรอกรหัสนักเรียน">
                         </div>
                         <div class="form-group">
                             <label>รหัสผ่าน</label>
-                            <input type="password" class="form-control" placeholder="กรอกรหัสผ่าน">
+                            <input type="password" class="form-control" id="password" placeholder="กรอกรหัสผ่าน">
                         </div>
                         <div class="checkbox">
                             <label>
@@ -53,7 +53,7 @@
                             
 
                         </div>
-                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" onClick="window.location.href='index.php';">Sign in</button>
+                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" onClick="singin()" id="singin">Sign in</button>
                         
                         <div class="register-link m-t-15 text-center">
                             <p>Don't have account ? <a href="user_register.php  "> Sign Up Here</a></p>
@@ -69,6 +69,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+    <script type="text/javascript" src="loginandregister.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.0.5/firebase.js"></script>
 
 </body>
 </html>
