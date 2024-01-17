@@ -11,14 +11,14 @@ import {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBNsg5Gs5szrUYSgCaLYuqGCHtJVYyoQKI",
-  authDomain: "store-test-tester01.firebaseapp.com",
-  databaseURL: "https://store-test-tester01-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "store-test-tester01",
-  storageBucket: "store-test-tester01.appspot.com",
-  messagingSenderId: "127078847345",
-  appId: "1:127078847345:web:7e3e54a3b1d53877e5dcd0",
-  measurementId: "G-SCSS8DMN7T"
+  apiKey: "AIzaSyBvA9OLrj62mfw59aCff7xWb4vTBR6HnJw",
+  authDomain: "teacherjack.firebaseapp.com",
+  databaseURL: "https://teacherjack-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "teacherjack",
+  storageBucket: "teacherjack.appspot.com",
+  messagingSenderId: "803811966761",
+  appId: "1:803811966761:web:07a380be757b9a6918c138",
+  measurementId: "G-YE2RR86RCM"
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -43,7 +43,7 @@ window.login= function(e) {
       
       
       
-      window.location.replace('UserPage.html')
+      window.location.replace('user_main_menu.php')
      // localStorage.setItem(success,user,uid)
       
     })

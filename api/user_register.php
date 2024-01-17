@@ -37,25 +37,25 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <form onsubmit="signup(event)">
                         <div class="form-group">
                             <label>User Name</label>
-                            <input type="email" class="form-control" placeholder="User Name">
+                            <input type="text" name="" class="form-control" placeholder="Email" id="email">
                         </div>
                         <div class="form-group">
                             <label>Email address</label>
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="password" class="form-control" name="" placeholder="Password" id="password">
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" name="" class="form-control" placeholder="Confirm Password" id="copassword">
                         </div>
-                        <div class="checkbox">
+<!--                         <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Agree the terms and policy
                             </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30"onClick="window.location.href='login.php';">Register</button>
+                        </div> -->
+                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" id="signupinp" value="Sign Up">Register</button>
 
                         <div class="register-link m-t-15 text-center">
                             <p>Already have account ? <a href="user_login.php"> Sign in</a></p>
@@ -70,7 +70,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
 
 </body>
+<script src="JAVASCRIPT/register.js" type="module"></script>
+<script src="assets/js/main.js"></script>
+
 </html>
