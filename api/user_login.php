@@ -39,7 +39,7 @@
                 <div class="login-form">
                 <form onsubmit="login(event)">
                         <div class="form-group">
-                            <label>รหัสนักเรียน</label>
+                            <label>รหัสนักเรียน</label>    
                             <input  class="form-control" type="text" name="" placeholder="Email" id="email">
                         </div>
                         <div class="form-group">
@@ -72,6 +72,8 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.0.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
 </body>
 <script src="JAVASCRIPT/login.js" type="module"></script>
