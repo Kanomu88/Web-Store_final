@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-    <title>Ela Admin - HTML5 Admin Template</title>
+    <title>Ela Admin - HTML5 Admin Template</title>                                                     
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -42,9 +42,9 @@
                             <label>รหัสนักเรียน</label>    
                             <input  class="form-control" type="text" name="" placeholder="Email" id="email">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label>รหัสผ่าน</label>
-                            <input  class="form-control" type="password" name="" placeholder="Password" id="password">
+                            <input  class="form-control" type="password" name="" placeholder="Password" id="password" >
                         </div>
 <!--                         <div class="checkbox">
                             <label>
@@ -74,6 +74,7 @@
     <script src="https://www.gstatic.com/firebasejs/3.0.5/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
 
 </body>
 <script src="JAVASCRIPT/login.js" type="module"></script>

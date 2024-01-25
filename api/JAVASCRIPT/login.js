@@ -4,7 +4,7 @@ import {
   getAuth,
   signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
-import { getFirestore, collection, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAL8OSkYagZe97HqUt5WEaTmuE4mbrHDqI",
@@ -18,9 +18,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
-const firestore = getFirestore(app);
-const usersRef = collection(firestore, "users");
-
+const database = getDatabase(app);
+const usersRef = ref(database, "users");
 
 var email = document.getElementById("email");
 var password = document.getElementById("password");
@@ -38,25 +37,27 @@ window.login= function(e,user) {
       localStorage.setItem("uid",aaaa)
       console.log(aaaa)
       
+      
 
-      usersRef.doc(user.uid).get().then((doc) => {  
-          if (doc.exists) {
-              const role = doc.data().role;
-  
-              if (role === "admin") {
-                  window.location.replace('admin_main_menu.php')
-              } else if (role === "student") {
-                  window.location.replace('user_main_menu.php')
-              } else {
-                  alert("Invalid user role.");
-              }
-          } else {
-              alert("User document not found.");
-          }
-          return user.uid;
-        })
+      get(usersRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            const userData = snapshot.val();
+            const role = userData[user.uid]?.role;
 
+            if (role === "admin") {
+                openAdminModal();
+            } else if (role === "student") {
+                openStudentModal();
+            } else {
+                alert("Invalid user role.");
+            }
+        } else {
+            alert("User data not found.");
+        }
+    }).catch((error) => {
+        console.error("Error getting user data:", error);
     })
+  })
     .catch(function (err) {
       alert("login error"+err);
     });
