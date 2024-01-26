@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
+    <title>เว็ปไซต์ยืมคืนอุปกรณ์ สโตร์</title>                                                     
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://www.cdti.ac.th/wp-content/uploads/2023/08/Artboard-1-copy-2-1.png">
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
 <!--     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
@@ -113,7 +114,7 @@
                     </li>
                     <li class="menu-title">Equipment</li><!-- /.menu-title -->
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-tasks"></i>ยืม-คืนอุปกรณ์ </a>
+                        <a href="user_main_menu.php"> <i class="menu-icon fa fa-tasks"></i>Menu</a>
                     </li>
 
                     <li class="menu-title">Sytem</li><!-- /.menu-title -->
@@ -203,7 +204,7 @@
                 
                 
                   <div slot="footer">
-                  <sl-dialog id="dialog" label="Dialog" class="dialog-overview">
+                  <sl-dialog id="dialog2" label="Dialog" class="dialog-overview">
                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     <br /><br />
                 <div class="format-number-overview">
@@ -217,9 +218,9 @@
                      }
             </style>
  
-                    <sl-button id="addbutton" slot="footer" variant="primary">Add</sl-button>
+                    <sl-button id="addbutton2" slot="footer" variant="primary">Add</sl-button>
                    </sl-dialog>
-                <sl-button id="openDialogButton" variant="primary" pill>More Info </sl-button>
+                <sl-button id="openDialogButton2" variant="primary" pill>More Info </sl-button>
                 
                 <span>คงเหลือ   <sl-format-number id="formattedValue" value="50"></sl-format-number>
                  ชิ้น</span>
@@ -493,13 +494,23 @@
       dialog.show();
     });
 
-    addButton.addEventListener('click', () => {
+/*     addButton.addEventListener('click', () => {
       const subtractedValue = formatter.value - (parseInt(input.value) || 0);
       formatter.value = subtractedValue;
       dialog.hide();
-    });
+    }); */
   }
   setupDialog('dialog', 'openDialogButton', 'addbutton', 'productCount');
+  setupDialog('dialog2', 'openDialogButton2', 'addbutton2', 'productCount2');
+  setupDialog('dialog3', 'openDialogButton3', 'addbutton3', 'productCount3');
+  setupDialog('dialog4', 'openDialogButton4', 'addbutton4', 'productCount4');
+  setupDialog('dialog5', 'openDialogButton5', 'addbutton5', 'productCount5');
+  setupDialog('dialog5', 'openDialogButton5', 'addbutton5', 'productCount5');
+  setupDialog('dialog6', 'openDialogButton6', 'addbutton6', 'productCount6');
+  setupDialog('dialog7', 'openDialogButton7', 'addbutton7', 'productCount7');
+  setupDialog('dialog8', 'openDialogButton8', 'addbutton8', 'productCount8');
+
+
 
 </script>
 

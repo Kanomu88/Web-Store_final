@@ -36,18 +36,21 @@ window.login= function(e,user) {
       var aaaa =  (success.user.uid);
       localStorage.setItem("uid",aaaa)
       console.log(aaaa)
-      
-      
+      if (obj.email === "admin@gmail.com") {
+        window.location.replace('admin_main_menu.php')
+      }else {
+      window.location.replace('user_main_menu.php')
+      }
 
-      get(usersRef).then((snapshot) => {
+/*       get(usersRef).then((snapshot) => {
         if (snapshot.exists()) {
             const userData = snapshot.val();
             const role = userData[user.uid]?.role;
 
             if (role === "admin") {
-                openAdminModal();
+              window.location.replace('admin_main_menu.php')
             } else if (role === "student") {
-                openStudentModal();
+              window.location.replace('user_main_menu.php')
             } else {
                 alert("Invalid user role.");
             }
@@ -56,7 +59,7 @@ window.login= function(e,user) {
         }
     }).catch((error) => {
         console.error("Error getting user data:", error);
-    })
+    }) */
   })
     .catch(function (err) {
       alert("login error"+err);

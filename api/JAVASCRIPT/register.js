@@ -1,6 +1,6 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-  import 'https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js';
+  import { getDatabase ,ref , push ,set, onValue,onChildAdded,get,remove,update, onChildChanged, onChildRemoved } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
   import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -23,29 +23,55 @@
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth()
-  const database = getDatabase(app);
+  const database = getDatabase();
 
 var email = document.getElementById("email");
 var password = document.getElementById("password");
 var copassword = document.getElementById("copassword");
+var role = document.getElementById("role");
+
 
 window.signup = function (e) {
     e.preventDefault();
     var obj = {
       email: email.value,
       password: password.value,
+/*       role: role.value, */
+/*       uid:localStorage.getItem("uid") */
     };
-  
+
+    if(email.value =="" || password.value ==""){
+      alert("All Field Are Required")
+  }
+  if(password.value == copassword.value){
+   
+  }
+  else{
+      alert("Password Confirmation is Wrong")
+      return false
+  }
+/*   const keyRef = ref(database, 'users','users')
+  obj.id=push(keyRef).key;
+  const refrences = ref(database, `users/${obj.uid}/`); */
+  // const sab =  localStorage.setItem()
+  // console.log(sab)
+
+
+
+/*       alert("data addded")
+ */
     createUserWithEmailAndPassword(auth, obj.email, obj.password)
     .then(function(success){
 
-      database.ref('users/' + user.uid).set(obj)
+      
 
-        window.location.replace('user_main_menu.php')
       alert("signup successfully")
+      window.location.replace('user_main_menu.php')
     })
     .catch(function(err){
-      alert("Error in " + err)
+      alert ("Error in " + err)
     });
-    console.log(obj);
+/*     set(refrences,obj) */
+/*     console.log(obj.id) */
+    console.log(obj)
   };
