@@ -70,7 +70,7 @@
 
                     <li class="menu-title">Sytem</li><!-- /.menu-title -->
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-sign-in"></i>Logout </a>
+                        <a href="#" onclick="logout()"> <i class="menu-icon fa fa-sign-in"></i>Logout </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -524,6 +524,7 @@
     <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="assets/js/init/datatables-init.js"></script>
+    <script src="JAVASCRIPT/logout.js" type="module"></script>
 
 
     <script type="text/javascript">
