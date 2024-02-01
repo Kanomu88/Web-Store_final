@@ -8,3 +8,6 @@ https://www.youtube.com/watch?v=Uhbn1KmiNbg&ab_channel=VectorM%3A
 
 ขอตัวอย่างโค้ดแบ่งระดับ user 2ระดับ คือ 1.admin 2.studen โดยให้เชื่อมต่อกับ firebase
 
+ <div id="product-list">
+            <!-- Product items will be dynamically added here -->
+        </div>
