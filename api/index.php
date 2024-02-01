@@ -103,6 +103,9 @@
 .navbar .navbar-nav > li.active {
     background: none;
 }
+.card-overview span {
+  margin-left: 1.5rem;
+}
     </style>
 </head>
 

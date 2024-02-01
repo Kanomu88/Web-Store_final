@@ -34,6 +34,8 @@
 
 
 // Function to create a new row
+// Function to create a new row
+// Function to create a new row
 function createRow(parent) {
     const row = document.createElement('div');
     row.classList.add('row');
@@ -68,6 +70,12 @@ function createProductCard(name, quantity, imageURL) {
     const footerDiv = document.createElement('div');
     footerDiv.slot = 'footer';
 
+    const moreInfoButton = document.createElement('sl-button');
+    moreInfoButton.textContent = 'More Info';
+    moreInfoButton.slot = 'footer';
+    moreInfoButton.pill = true;
+    moreInfoButton.variant = 'primary';
+
     const quantitySpan = document.createElement('span');
     quantitySpan.textContent = 'คงเหลือ ' + quantity + ' ชิ้น';
 
@@ -76,6 +84,17 @@ function createProductCard(name, quantity, imageURL) {
     card.appendChild(strong);
     card.appendChild(footerDiv);
     flexDiv.appendChild(card);
+
+    // Create a "More Info" button
+
+
+    // Add click event listener to the "More Info" button
+    moreInfoButton.addEventListener('click', () => {
+        const dialog = document.getElementById('dialog');
+        dialog.show();
+    });
+
+    card.appendChild(moreInfoButton);
 
     return flexDiv;
 }
@@ -109,3 +128,46 @@ get(productsRef).then((snapshot) => {
     });
 });
 
+// Function to create the sl-dialog
+function createDialog() {
+    const dialog = document.createElement('sl-dialog');
+    dialog.id = 'dialog';
+    dialog.label = 'Dialog';
+    dialog.classList.add('dialog-overview');
+
+    const content = document.createTextNode('Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+    dialog.appendChild(content);
+
+    const formatNumberDiv = document.createElement('div');
+    formatNumberDiv.classList.add('format-number-overview');
+
+    const slInput = document.createElement('sl-input');
+    slInput.type = 'number';
+    slInput.value = '0';
+    slInput.label = 'Number to Format';
+    slInput.style.maxWidth = '180px';
+
+    formatNumberDiv.appendChild(slInput);
+    dialog.appendChild(formatNumberDiv);
+
+    const styleTag = document.createElement('style');
+    styleTag.textContent = `
+        .button-group-toolbar sl-button-group:not(:last-of-type) {
+            margin-right: var(--sl-spacing-x-small);
+        }
+    `;
+    dialog.appendChild(styleTag);
+
+    const addButton = document.createElement('sl-button');
+    addButton.id = 'addbutton';
+    addButton.slot = 'footer';
+    addButton.variant = 'primary';
+    addButton.textContent = 'Add';
+
+    dialog.appendChild(addButton);
+
+    return dialog;
+}
+
+// Append the dialog to the body
+document.body.appendChild(createDialog());
