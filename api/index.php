@@ -106,6 +106,7 @@
 .card-overview span {
   margin-left: 1.5rem;
 }
+
     </style>
 </head>
 
@@ -125,7 +126,7 @@
 
                     <li class="menu-title">Sytem</li><!-- /.menu-title -->
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-sign-in"></i>Logout </a>
+                        <a href="#" onclick="logout()"> <i class="menu-icon fa fa-sign-in"></i>Logout </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -164,13 +165,6 @@
                 </div>
                 </div>
                 </div>
-
-
-
-                
- 
-    <!-- /#right-panel -->
-
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
@@ -178,43 +172,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="JAVASCRIPT/cartdata.js" type="module"></script>
-<!--     <script src="https://cdn.tailwindcss.com"></script>
- -->
- <script type="module">
-  function setupDialog(dialogId, openButtonId, addButtonId, productCountId, decreaseButtonId, plusButtonId) {
-    const dialog = document.getElementById(dialogId);
-    const openButton = document.getElementById(openButtonId);
-    const addButton = document.getElementById('addButton');
-    const productCountSpan = document.getElementById(productCountId);
-    const formatter = document.getElementById('formattedValue');
-    const input = document.querySelector('.format-number-overview sl-input');
-    let productCount = 0;
-    
-    
-
-    openButton.addEventListener('click', () => {
-      dialog.show();
-    });
-
-/*     addButton.addEventListener('click', () => {
-      const subtractedValue = formatter.value - (parseInt(input.value) || 0);
-      formatter.value = subtractedValue;
-      dialog.hide();
-    }); */
-  }
-  setupDialog('dialog', 'openDialogButton', 'addbutton', 'productCount');
-  setupDialog('dialog2', 'openDialogButton2', 'addbutton2', 'productCount2');
-  setupDialog('dialog3', 'openDialogButton3', 'addbutton3', 'productCount3');
-  setupDialog('dialog4', 'openDialogButton4', 'addbutton4', 'productCount4');
-  setupDialog('dialog5', 'openDialogButton5', 'addbutton5', 'productCount5');
-  setupDialog('dialog5', 'openDialogButton5', 'addbutton5', 'productCount5');
-  setupDialog('dialog6', 'openDialogButton6', 'addbutton6', 'productCount6');
-  setupDialog('dialog7', 'openDialogButton7', 'addbutton7', 'productCount7');
-  setupDialog('dialog8', 'openDialogButton8', 'addbutton8', 'productCount8');
-
-
-
-</script>
+    <script src="JAVASCRIPT/logout.js" type="module"></script>
 
 </body>
 </html>
