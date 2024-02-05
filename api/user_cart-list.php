@@ -1,3 +1,87 @@
+<?php
+// เชื่อมต่อกับ Firebase Realtime Database
+$firebaseDatabaseURL = 'https://store-54a2b-default-rtdb.asia-southeast1.firebasedatabase.app/';
+$firebaseSecretKey = 'AIzaSyAL8OSkYagZe97HqUt5WEaTmuE4mbrHDqI'; // ใส่คีย์เซ็นสำหรับการเชื่อมต่อกับ Firebase Realtime Database
+$firebaseAppURL = $firebaseDatabaseURL . 'selectedProducts.json?auth=' . $firebaseSecretKey;
+
+// ตรวจสอบว่าผู้ใช้คลิกที่ปุ่ม "ตกลง" หรือไม่
+if (isset($_POST['submit'])) {
+    // สร้างเลขที่ใบเสร็จใหม่
+    $receiptNumber = generateReceiptNumber();
+
+    // บันทึกข้อมูลสินค้าที่เลือกลงใน Firebase Realtime Database
+    saveSelectedProducts($receiptNumber);
+
+    // Redirect ไปยังหน้า user_cart-list.php หรือหน้าอื่น ๆ ตามที่ต้องการ
+    alert("Successfully");
+    header('index.php');
+    exit;
+}
+
+// ฟังก์ชันสร้างเลขที่ใบเสร็จใหม่
+function generateReceiptNumber() {
+    // ตัวอย่างการสร้างเลขที่ใบเสร็จ โดยใช้เวลาปัจจุบัน
+    return 'RECEIPT_' . date('YmdHis');
+}
+
+// ฟังก์ชันบันทึกข้อมูลสินค้าลงใน Firebase Realtime Database
+function saveSelectedProducts($receiptNumber) {
+    // รับข้อมูลสินค้าจาก form หรือจากต้นทางอื่น ๆ
+    // เช่น $_POST['product_name'], $_POST['product_quantity']
+
+    // ส่งข้อมูลสินค้าไปยัง Firebase Realtime Database
+    // ตัวอย่างเพียงแสดงการส่งข้อมูลในรูปแบบ JSON
+    $data = array(
+        'name' => $_POST['product_name'],
+        'quantity' => $_POST['product_quantity'],
+        'receiptNumber' => $receiptNumber
+    );
+
+    $jsonData = json_encode($data);
+
+    // ส่งข้อมูลไปยัง Firebase Realtime Database โดยใช้ cURL
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $firebaseAppURL);
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonData);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+    $response = curl_exec($curl);
+    curl_close($curl);
+
+    // ตรวจสอบการส่งข้อมูล
+    if ($response === false) {
+        alert("Successfully faild");
+
+        // การส่งข้อมูลไม่สำเร็จ
+        // คุณสามารถจัดการข้อผิดพลาดตามที่ต้องการ
+    } else {
+        alert("Successfully send");
+
+        // การส่งข้อมูลสำเร็จ
+        // คุณสามารถดำเนินการต่อไปตามที่ต้องการ
+    }
+}
+?>
+
+<!-- โค้ด HTML ของ user_cart-list.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- โค้ดส่วนหัวของหน้าเว็บ -->
+</head>
+<body>
+    <!-- โค้ดส่วนเนื้อหาของหน้าเว็บ -->
+    <form method="post" action="">
+        <!-- ส่วนอื่น ๆ ของฟอร์ม -->
+        <input type="hidden" name="product_name" value="Product Name" />
+        <input type="hidden" name="product_quantity" value="Product Quantity" />
+        <button type="submit" name="submit">ตกลง</button>
+    </form>
+</body>
+</html>
+
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -188,7 +272,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="JAVASCRIPT/logout.js" type="module"></script>
+    <script src="JAVASCRIPT/cartdata.js" type="module"></script>
 
+<!--     <script src="JAVASCRIPT/cartloaddata.js" type="module"></script>
+ -->
 
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>

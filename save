@@ -11,3 +11,9 @@ https://www.youtube.com/watch?v=Uhbn1KmiNbg&ab_channel=VectorM%3A
  <div id="product-list">
             <!-- Product items will be dynamically added here -->
         </div>
+
+
+
+$firebaseDatabaseURL = 'https://store-54a2b-default-rtdb.asia-southeast1.firebasedatabase.app/';
+$firebaseSecretKey = 'YOUR_FIREBASE_SECRET_KEY'; // ใส่คีย์เซ็นสำหรับการเชื่อมต่อกับ Firebase Realtime Database
+$firebaseAppURL = $firebaseDatabaseURL . 'selectedProducts.json?auth=' . $firebaseSecretKey;
