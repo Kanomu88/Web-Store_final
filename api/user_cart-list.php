@@ -1,71 +1,6 @@
-<?php
-// เชื่อมต่อกับ Firebase Realtime Database
-$firebaseDatabaseURL = 'https://store-54a2b-default-rtdb.asia-southeast1.firebasedatabase.app/';
-$firebaseSecretKey = 'AIzaSyAL8OSkYagZe97HqUt5WEaTmuE4mbrHDqI'; // ใส่คีย์เซ็นสำหรับการเชื่อมต่อกับ Firebase Realtime Database
-$firebaseAppURL = $firebaseDatabaseURL . 'selectedProducts.json?auth=' . $firebaseSecretKey;
-
-// ตรวจสอบว่าผู้ใช้คลิกที่ปุ่ม "ตกลง" หรือไม่
-if (isset($_POST['submit'])) {
-    // สร้างเลขที่ใบเสร็จใหม่
-    $receiptNumber = generateReceiptNumber();
-
-    // บันทึกข้อมูลสินค้าที่เลือกลงใน Firebase Realtime Database
-    saveSelectedProducts($receiptNumber);
-
-    // Redirect ไปยังหน้า user_cart-list.php หรือหน้าอื่น ๆ ตามที่ต้องการ
-    alert("Successfully");
-    header('index.php');
-    exit;
-}
-
-// ฟังก์ชันสร้างเลขที่ใบเสร็จใหม่
-function generateReceiptNumber() {
-    // ตัวอย่างการสร้างเลขที่ใบเสร็จ โดยใช้เวลาปัจจุบัน
-    return 'RECEIPT_' . date('YmdHis');
-}
-
-// ฟังก์ชันบันทึกข้อมูลสินค้าลงใน Firebase Realtime Database
-function saveSelectedProducts($receiptNumber) {
-    // รับข้อมูลสินค้าจาก form หรือจากต้นทางอื่น ๆ
-    // เช่น $_POST['product_name'], $_POST['product_quantity']
-
-    // ส่งข้อมูลสินค้าไปยัง Firebase Realtime Database
-    // ตัวอย่างเพียงแสดงการส่งข้อมูลในรูปแบบ JSON
-    $data = array(
-        'name' => $_POST['product_name'],
-        'quantity' => $_POST['product_quantity'],
-        'receiptNumber' => $receiptNumber
-    );
-
-    $jsonData = json_encode($data);
-
-    // ส่งข้อมูลไปยัง Firebase Realtime Database โดยใช้ cURL
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, $firebaseAppURL);
-    curl_setopt($curl, CURLOPT_POST, 1);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonData);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-    $response = curl_exec($curl);
-    curl_close($curl);
-
-    // ตรวจสอบการส่งข้อมูล
-    if ($response === false) {
-        alert("Successfully faild");
-
-        // การส่งข้อมูลไม่สำเร็จ
-        // คุณสามารถจัดการข้อผิดพลาดตามที่ต้องการ
-    } else {
-        alert("Successfully send");
-
-        // การส่งข้อมูลสำเร็จ
-        // คุณสามารถดำเนินการต่อไปตามที่ต้องการ
-    }
-}
-?>
 
 <!-- โค้ด HTML ของ user_cart-list.php -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <!-- โค้ดส่วนหัวของหน้าเว็บ -->
@@ -207,29 +142,8 @@ function saveSelectedProducts($receiptNumber) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        // เชื่อมต่อกับ Firebase Realtime Database
-                                        $firebaseDatabaseURL = 'https://store-54a2b-default-rtdb.asia-southeast1.firebasedatabase.app/';
-                                        $firebaseSecretKey = 'YOUR_FIREBASE_SECRET_KEY'; // ใส่คีย์เซ็นสำหรับการเชื่อมต่อกับ Firebase Realtime Database
-                                        $firebaseAppURL = $firebaseDatabaseURL . 'selectedProducts.json?auth=' . $firebaseSecretKey;
-
-                                        $firebaseResponse = file_get_contents($firebaseAppURL);
-                                        $firebaseData = json_decode($firebaseResponse, true);
-
-                                        // ถ้ามีข้อมูลใน Firebase Realtime Database
-                                        if (!empty($firebaseData)) {
-                                            foreach ($firebaseData as $product) {
-                                                echo "<tr>";
-                                                echo "<td>{$product['name']}</td>";
-                                                echo "<td>{$product['quantity']}</td>";
-                                                echo "</tr>";
-                                            }
-                                        } else {
-                                            // ถ้าไม่มีข้อมูล
-                                            echo "<tr><td colspan='2'>No products in the cart.</td></tr>";
-                                        }
-                                        ?>
-                                    </tbody>
+                
+              </tbody>
                                 </table>
 
                             </div>
@@ -272,10 +186,16 @@ function saveSelectedProducts($receiptNumber) {
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="JAVASCRIPT/logout.js" type="module"></script>
-    <script src="JAVASCRIPT/cartdata.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!--     <script src="JAVASCRIPT/cartloaddata.js" type="module"></script>
+<!--     <script src="JAVASCRIPT/cartdata.js" type="module"></script>
  -->
+    <script src="JAVASCRIPT/cartloaddata.js" type="module"></script>
+    <script>
+        $(document).ready(function() {
+            $('#cartTable').DataTable();
+        });
+    </script>
 
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
@@ -287,58 +207,6 @@ function saveSelectedProducts($receiptNumber) {
     <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="assets/js/init/datatables-init.js"></script>
-
-
-    <script type="text/javascript">
-        $(document).ready(function(){ 
-            // Initialize jQuery DataTable
-            if (!$.fn.DataTable.isDataTable('#bootstrap-data-table')) {
-                $('#bootstrap-data-table').DataTable({
-                    pageLength: 25,
-                    columnDefs: [
-                        {
-                            orderable: false,
-                            targets: 7              
-                        },
-                        {
-                            className: 'hide',
-                            visible: false,
-                            targets: [7] // Specify the target column index for visibility
-                        }
-                    ],      
-                    language: {
-                        search: "_INPUT_",
-                        searchPlaceholder: 'Search...'
-                    },
-                    paging: true,
-                    lengthChange: true,
-                    searching: true,
-                    ordering: true,
-                    info: true,
-                    autoWidth: true
-                }); 
-
-                $('#bootstrap-data-table').DataTable().columns('.hide').visible(false);
-
-                // Initialize bootstrapToggle
-                initToggle();
-                $('#bootstrap-data-table_wrapper').click(function(){
-                    initToggle();
-                });        
-                $('#bootstrap-data-table_filter').keyup(function(){
-                    initToggle();
-                });
-
-                function initToggle(){ 
-                    $('.cb').find('input[type=checkbox][data-toggle=toggle]').each(function(){
-                        $(this).bootstrapToggle();
-                    });
-                }
-            }
-        });
-
-    </script>
-
 
 </body>
 </html>

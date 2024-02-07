@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
     <link rel="shortcut icon" href="https://www.cdti.ac.th/wp-content/uploads/2023/08/Artboard-1-copy-2-1.png">
 
+    <script src="JAVASCRIPT/logout.js" type="module"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
 <!--     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
@@ -144,7 +145,7 @@
                 </div>
             </div>
             <div class="user-area dropdown float-right">
-                        <a href="user_cart-list.php"  > <span class="count">99</span>
+                        <a href="user_cart-list.php"> <span class="count"></span>
                             <img class="user-avatar rounded-circle" src="https://e7.pngegg.com/pngimages/772/45/png-clipart-shopping-cart-shopping-centre-icon-shopping-cart-text-retail.png" alt="User Avatar">
                         
                           </a>
@@ -172,7 +173,6 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="JAVASCRIPT/cartdata.js" type="module"></script>
-    <script src="JAVASCRIPT/logout.js" type="module"></script>
 
 </body>
 </html>
