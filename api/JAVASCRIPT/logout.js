@@ -52,5 +52,6 @@ window.logout = function () {
       }
     });
   }
+  
   checkAuthentication();
   

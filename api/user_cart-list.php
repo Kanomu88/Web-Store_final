@@ -141,7 +141,7 @@
                                             <th>จำนวน</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="product-table-body">
                 
               </tbody>
                                 </table>
@@ -186,16 +186,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="JAVASCRIPT/logout.js" type="module"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!--     <script src="JAVASCRIPT/cartdata.js" type="module"></script>
  -->
     <script src="JAVASCRIPT/cartloaddata.js" type="module"></script>
-    <script>
-        $(document).ready(function() {
-            $('#cartTable').DataTable();
-        });
-    </script>
 
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>

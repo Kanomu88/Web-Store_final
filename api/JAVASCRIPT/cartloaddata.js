@@ -23,6 +23,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth()
 const database = getDatabase(app);
+const productsRef = ref(database, 'products');
+
  /* firebase.initializeApp(firebaseConfig); */
 
   // Get a reference to the database
@@ -32,24 +34,33 @@ const database = getDatabase(app);
 /* const a = auth.currentUser.uid;
  *//* const currentUserId = currentUser ? currentUser.uid : null;
  */
+// หากคุณต้องการแสดงข้อมูลในตาราง HTML
+const table = document.getElementById('bootstrap-data-table');
 
- function populateCartTable() {
-    const cartTable = $('#cartTable').DataTable();
-    const selectedProductsRef =ref(database, 'selectedProducts');
+// ลบข้อมูลทั้งหมดออกจากตารางก่อนที่จะแสดงข้อมูลใหม่
+table.innerHTML = '';
 
-
-    onValue(selectedProductsRef,    (snapshot) => {
-        cartTable.clear().draw();
-        snapshot.forEach(function(userSnapshot) {
-            userSnapshot.forEach(function(productSnapshot) {
-                const product = productSnapshot.val();
-                cartTable.row.add([product.productName, product.quantity]).draw(false);
-            });
-        });
-    });
-}
-
-// Call the function to populate the DataTable
-$(document).ready(function() {
-    populateCartTable();
+// ดึงข้อมูลจาก Firebase Realtime Database
+get(productsRef).then((snapshot) => {
+  snapshot.forEach((itemSnapshot) => {
+    const products = itemSnapshot.val();
+    for (const key in products) {
+      const product = products[key];
+      const productName = product.name;
+      const productQuantity = product.quantity;
+      
+      // สร้างแถวใหม่ในตาราง
+      const newRow = table.insertRow();
+      
+      // เพิ่มชื่อสินค้าลงในเซลล์แรกของแถว
+      const productNameCell = newRow.insertCell();
+      productNameCell.textContent = productName;
+      
+      // เพิ่มจำนวนสินค้าลงในเซลล์ที่สองของแถว
+      const productQuantityCell = newRow.insertCell();
+      productQuantityCell.textContent = productQuantity;
+    }
+  });
+}).catch((error) => {
+  console.error('Error getting product list: ', error);
 });

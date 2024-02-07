@@ -188,25 +188,24 @@ function createDialog() {
           productName: productName,
           quantity: selectedQuantity
         };
-
-        const productListRef = ref(database, 'products');
+        const productListRef = ref(database, 'selectedProducts/' + auth.currentUser.uid + '/products/');
         get(productListRef).then((snapshot) => {
           let productCount = 0;
           snapshot.forEach(() => {
             productCount++;
           });
-          const newProductNodeName = String(productCount + 1);
-          
-          set(ref(database,'/selectedProducts/' + auth.currentUser.uid + `/products/${newProductNodeName}`), selectedProductData)
-            .then(() => {
-              console.log('New product node added successfully!');
-            })
-            .catch((error) => {
-              console.error('Error adding new product node: ', error);
-            });
-        }).catch((error) => {
-          console.error('Error getting product list: ', error);
-        });
+        const newProductNodeName = String(productCount + 1);
+        // Push the new product data to the "selectedProducts" node with automatic child names
+         set(ref(database, '/selectedProducts/' +  auth.currentUser.uid +  '/products/' +`${newProductNodeName}`), selectedProductData) 
+          .then(() => { 
+            
+/*       set(ref(database, 'selectedProducts/' + auth.currentUser.uid + `/products/${newProductNodeName}`), selectedProductData)
+ */            console.log('New product node added successfully!'); 
+              });
+         }) 
+          .catch((error) => {
+            console.error('Error adding new product node: ', error);
+          });
       } else {
         console.error('No strong element found inside the selected sl-card!');
       }
