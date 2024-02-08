@@ -69,6 +69,10 @@
             text-align: center;
             margin-bottom: 2rem;    
         }
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
     </style>
 
     <aside id="left-panel" class="left-panel">
@@ -134,7 +138,9 @@
                                 <strong class="card-title">ตารางสรุปรายการ</strong>
                             </div>
                             <div class="card-body">
-                                <table id="bootstrap-data-table" class="table table-striped table-bordered " data-toggle="true">
+                                <table id="bootstrap-data" class="table table-striped table-bordered " data-toggle="true">
+<!--                                 <table id="bootstrap-data-table" class="table table-striped table-bordered " data-toggle="true">
+ -->
                                     <thead>
                                         <tr>
                                             <th>ชื่อสินค้า</th>
@@ -159,7 +165,7 @@
             <sl-button variant="primary" href="/api/index.php" >ย้อนกลับ</sl-button>
 
 
-            <sl-button variant="primary" href="/api/index.php">ตกลง</sl-button>
+            <sl-button variant="primary" onclick="savedata()">ตกลง</sl-button>
         </div>
 
         <footer class="site-footer">
@@ -190,7 +196,8 @@
 <!--     <script src="JAVASCRIPT/cartdata.js" type="module"></script>
  -->
     <script src="JAVASCRIPT/cartloaddata.js" type="module"></script>
-
+<!--     <script src="JAVASCRIPT/savedatatofirebase.js" type="module"></script>
+ -->
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
@@ -201,6 +208,10 @@
     <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="assets/js/init/datatables-init.js"></script>
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $('#bootstrap-data-table-export').DataTable();
+      } );
+  </script>
 </body>
 </html>
