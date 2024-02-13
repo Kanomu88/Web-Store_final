@@ -41,16 +41,25 @@
                     <form onsubmit="signup(event)">
                         <div class="form-group">
                             <label>User Name</label>
+                            <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             <input type="text" name="" class="form-control" placeholder="Email" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label>Email address</label>
-                            <input type="password" class="form-control" name="" placeholder="Password" id="password">
-                        </div>
+                            </div>
+                            </div>
                         <div class="form-group">
                             <label>Password</label>
+                            <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                            <input type="password" class="form-control" name="" placeholder="Password" id="password">
+                            </div>
+                            </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
                             <input type="password" name="" class="form-control" placeholder="Confirm Password" id="copassword">
-                        </div>
+                            </div>
+                            </div>
                         <div class="form-group">
                             <input type="text" value="student" name="" class="form-control" placeholder="role" id="role" hidden>
                         </div>
@@ -81,8 +90,15 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+
 </body>
 <script src="JAVASCRIPT/register.js" type="module"></script>
 <script src="assets/js/main.js"></script>
+<script type ="module">
+   $(document).ready(function() {
+    $('.your-element').matchHeight(); // เรียกใช้ matchHeight บนองค์ประกอบที่ต้องการให้มีความสูงเท่ากัน
+});
 
 </html>

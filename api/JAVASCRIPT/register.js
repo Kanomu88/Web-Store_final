@@ -41,13 +41,35 @@ window.signup = function (e) {
     };
 
     if(email.value =="" || password.value ==""){
-      alert("All Field Are Required")
+      var alertHTML = `
+      <div class="card-body fixed-top" style="top: 20px; left: 95rem;">
+          <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+              <span class="badge badge-pill badge-primary">Success</span>
+            กรุณากรอกข้อมูล
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+      </div>
+  `;
+  $('body').append(alertHTML); // Append the alert HTML to the body
   }
   if(password.value == copassword.value){
    
   }
   else{
-      alert("Password Confirmation is Wrong")
+    var alertHTML = `
+    <div class="card-body fixed-top" style="top: 20px; left: 95rem;">
+        <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+            <span class="badge badge-pill badge-primary">Success</span>
+          กรุณากรอกรหัสผ่านให้ตรงกัน
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+`;
+$('body').append(alertHTML); // Append the alert HTML to the body
       return false
   }
 /*   const keyRef = ref(database, 'users','users')
@@ -62,15 +84,26 @@ window.signup = function (e) {
  */
     createUserWithEmailAndPassword(auth, obj.email, obj.password)
     .then(function(success){
-
-      
-
-      alert("signup successfully")
+      var alertHTML = `
+          <div class="card-body fixed-top" style="top: 20px; left: 95rem;">
+              <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+                  <span class="badge badge-pill badge-primary">Success</span>
+                  สร้างผู้ใช้สำเร็จ
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          </div>
+      `;
+      $('body').append(alertHTML); // Append the alert HTML to the body
+      setTimeout(function() {
       window.location.replace('user_main_menu.php')
+    },1500); // 2000 milliseconds = 2 seconds
+
     })
-    .catch(function(err){
+   /*  .catch(function(err){
       alert ("Error in " + err)
-    });
+    }); */
 /*     set(refrences,obj) */
 /*     console.log(obj.id) */
     console.log(obj)

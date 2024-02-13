@@ -17,3 +17,33 @@ https://www.youtube.com/watch?v=Uhbn1KmiNbg&ab_channel=VectorM%3A
 $firebaseDatabaseURL = 'https://store-54a2b-default-rtdb.asia-southeast1.firebasedatabase.app/';
 $firebaseSecretKey = 'YOUR_FIREBASE_SECRET_KEY'; // ใส่คีย์เซ็นสำหรับการเชื่อมต่อกับ Firebase Realtime Database
 $firebaseAppURL = $firebaseDatabaseURL . 'selectedProducts.json?auth=' . $firebaseSecretKey;
+
+
+<?php
+    $firebaseDatabaseURL = 'https://store-54a2b-default-rtdb.asia-southeast1.firebasedatabase.app/';
+    $firebaseSecretKey = 'AIzaSyAL8OSkYagZe97HqUt5WEaTmuE4mbrHDqI';
+    $firebaseAppURL = $firebaseDatabaseURL . 'datauser.json?auth=' . $firebaseSecretKey;
+
+    $firebaseResponse = file_get_contents($firebaseAppURL);
+    $firebaseData = json_decode($firebaseResponse, true);
+
+    if (!empty($firebaseData['datauser'])) {
+        echo "<table>";
+        echo "<tr><th>Receipt Number</th><th>Email</th></tr>";
+        foreach ($firebaseData['datauser'] as $receiptNumber => $userData) {
+            foreach ($userData as $userId => $userDetails) {
+                foreach ($userDetails as $productKey => $productData) {
+                    foreach ($productData['products'] as $product) {
+                        echo "<tr>";
+                        echo "<td>{$receiptNumber}</td>"; // Display the receipt number
+                        echo "<td>{$product['email']}</td>"; // Display the email
+                        echo "</tr>";
+                    }
+                }
+            }
+        }  
+        echo "</table>";                                          
+    } else {
+        echo "No products in the cart.";
+    }
+?>

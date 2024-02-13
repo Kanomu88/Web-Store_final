@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 </head>
@@ -40,12 +41,19 @@
                 <form onsubmit="login(event)">
                         <div class="form-group">
                             <label>รหัสนักเรียน</label>    
+                            <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             <input  class="form-control" type="text" name="" placeholder="Email" id="email">
-                        </div>
+                            </div>
+                            </div>
                         <div class="form-group" >
                             <label>รหัสผ่าน</label>
+                            <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
                             <input  class="form-control" type="password" name="" placeholder="Password" id="password" >
                         </div>
+                        </div>
+
 <!--                         <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Remember Me
@@ -79,5 +87,10 @@
 </body>
 <script src="JAVASCRIPT/login.js" type="module"></script>
 <script src="assets/js/main.js"></script>
+<script type ="module">
+    jQuery(document).ready(function($) {
+    // โค้ดของคุณที่ใช้ jQuery ทั้งหมดจะต้องถูกเข้าถึงโดยใช้ `$` แทน `jQuery`
+});
 
+</script>
 </html>

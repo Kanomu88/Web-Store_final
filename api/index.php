@@ -107,6 +107,9 @@
 .card-overview span {
   margin-left: 1.5rem;
 }
+.card-overview img {
+    height: 20rem;
+}
 
     </style>
 </head>

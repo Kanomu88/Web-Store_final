@@ -22,8 +22,12 @@ function checkAuthentication() {
         if (user) {
             const uid = user.uid;
             console.log(uid);
+            // เข้าถึง email ของผู้ใช้
+            const uide = user.email;
+            console.log(uide);
+            
             const productsRef = ref(database, 'selectedProducts/' + auth.currentUser.uid);
-
+    
             const table = document.getElementById('bootstrap-data');
             // Clear the table before populating with new data
             table.innerHTML = '';
@@ -64,54 +68,60 @@ function checkAuthentication() {
             }).catch((error) => {
                 console.error('Error getting product list: ', error);
             });
+
+            function generateReceiptNumber() {
+                // Generate a random number between 1000 and 9999
+                return Math.floor(Math.random() * 9000) + 1000;
+            }
+
+            window.savedata = function() {
+                // Initialize an empty array to store product data
+                const productsData = [];
+                const receiptNumber = generateReceiptNumber();
+                var currentDate = new Date();
+
+                // กำหนดรูปแบบของวันที่และเวลา
+                var dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+                
+                // แปลงวันที่และเวลาเป็นข้อความ
+                var formattedDate = dateTimeFormat.format(currentDate);
+                
+                // Loop through each row of the table
+                for (let i = 1; i < table.rows.length; i++) {
+                    // Get product name and quantity from each row
+                    const productName = table.rows[i].cells[0].textContent;
+                    const productQuantity = table.rows[i].cells[1].textContent;
+                    
+                    // Add product data to the array
+                    productsData.push({
+                        email: uide,
+                        productName: productName,
+                        quantity: productQuantity,
+                        timestamp: formattedDate
+                    });
+                }
+                // Get the current user's UID
+                const cleanEmail = uide ? uide.replace(/[.@]/g, '_') : '';
+
+                const datauserRef = ref(database, 'datauser/'+ receiptNumber +  '/' +  '/' + cleanEmail);
+                const removeproductincart = ref(database, 'selectedProducts/' + auth.currentUser.uid );
+
+                // Set the product data to the "datauser" node
+                set(datauserRef, {
+                    products: productsData
+                }).then(() => {
+                    alert("บันทึกรายการสำเร็จ")
+                    remove(removeproductincart)
+                    window.location.replace('user_main_menu.php')
+                    console.log('Product data saved successfully!');
+                }).catch((error) => {
+                    console.error('Error saving product data:', error);
+                });
+            }
         }
     });
-
-    function generateReceiptNumber() {
-      // Generate a random number between 1000 and 9999
-      return Math.floor(Math.random() * 9000) + 1000;
-  }
-
-    window.savedata = function () {
-        // Get the table element
-        const table = document.getElementById('bootstrap-data');
-        const removeproductincart = ref(database, 'selectedProducts/' + auth.currentUser.uid );
-
-        // Initialize an empty array to store product data
-        const productsData = [];
-        const receiptNumber = generateReceiptNumber();
-
-        // Loop through each row of the table
-        for (let i = 1; i < table.rows.length; i++) {
-            // Get product name and quantity from each row
-            const productName = table.rows[i].cells[0].textContent;
-            const productQuantity = table.rows[i].cells[1].textContent;
-            
-            // Add product data to the array
-            productsData.push({
-                productName: productName,
-                quantity: productQuantity
-            });
-        }
-
-        // Get the current user's UID
-/*         const uid = auth.currentUser.uid;
- */
-        // Create a new node named "datauser" in the database
-        const datauserRef = ref(database, 'datauser/'+ receiptNumber +  '//'+ auth.currentUser.uid );
-
-        // Set the product data to the "datauser" node
-        set(datauserRef, {
-            products: productsData
-        }).then(() => {
-          alert("บันทึกรายการสำเร็จ")
-          remove(removeproductincart)
-        window.location.replace('user_main_menu.php')
-            console.log('Product data saved successfully!');
-        }).catch((error) => {
-            console.error('Error saving product data:', error);
-        });
-    }
 }
+
+
 
 checkAuthentication();

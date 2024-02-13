@@ -31,16 +31,33 @@ window.login= function(e,user) {
   };
 
   signInWithEmailAndPassword(auth, obj.email, obj.password, usersRef)
-    .then(function (success) {
-      alert("logined Successfully")
-      var aaaa =  (success.user.uid);
-      localStorage.setItem("uid",aaaa)
-      console.log(aaaa)
-      if (obj.email === "admin@gmail.com") {
-        window.location.replace('admin_main_menu.php')
-      }else {
-      window.location.replace('user_main_menu.php')
-      }
+  .then(function (success) {
+      var alertHTML = `
+          <div class="card-body fixed-top" style="top: 20px; left: 95rem;">
+              <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+                  <span class="badge badge-pill badge-primary">Success</span>
+                  คุณล็อคอินสำเร็จ
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          </div>
+      `;
+      $('body').append(alertHTML); // Append the alert HTML to the body
+      var aaaa = success.user.uid;
+      localStorage.setItem("uid", aaaa);
+      console.log(aaaa);
+
+      // Wait for 2 seconds before redirecting
+      setTimeout(function() {
+          if (obj.email === "admin@gmail.com") {
+              window.location.replace('admin_main_menu.php');
+          } else {
+              window.location.replace('user_main_menu.php');
+          }
+      },1500); // 2000 milliseconds = 2 seconds
+
+
 
 /*       get(usersRef).then((snapshot) => {
         if (snapshot.exists()) {
@@ -62,7 +79,19 @@ window.login= function(e,user) {
     }) */
   })
     .catch(function (err) {
-      alert("login error"+err);
+      var alertHTML = `
+          <div class="card-body fixed-top" style="top: 20px; left: 95rem;">
+              <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+                  <span class="badge badge-pill badge-primary">Success</span>
+                  กรุณากรอกข้อมูล
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          </div>
+      `;
+      $('body').append(alertHTML); // Append the alert HTML to the body
+
     });
 
   console.log(obj);
