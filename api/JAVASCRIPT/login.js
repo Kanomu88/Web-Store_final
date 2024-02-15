@@ -83,7 +83,7 @@ window.login= function(e,user) {
           <div class="card-body fixed-top" style="top: 20px; left: 95rem;">
               <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
                   <span class="badge badge-pill badge-primary">Success</span>
-                  กรุณากรอกข้อมูล
+                  เกิดข้อผิดพลาด
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
@@ -95,4 +95,19 @@ window.login= function(e,user) {
     });
 
   console.log(obj);
+}
+
+if(email.value =="" || password.value ==""){
+  var alertHTML = `
+  <div class="card-body fixed-top" style="top: 20px; left: 95rem;">
+      <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+          <span class="badge badge-pill badge-primary">Success</span>
+        กรุณากรอกข้อมูล
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+  </div>
+`;
+$('body').append(alertHTML); // Append the alert HTML to the body
 }

@@ -101,7 +101,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Borrowers Page</h1>
                             </div>
                         </div>
                     </div>
@@ -116,10 +116,10 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Table</strong>
+                                <strong class="card-title">ตารางแสดงรายชื่อผู้ยืมทั้งหมด</strong>
                             </div>
                             <div class="card-body">
-                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <table id="bootstrap-data" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
                                             <th>Email</th>
@@ -140,12 +140,6 @@
             </div><!-- .animated -->
         </div><!-- .content -->
 
-    <div id='buttom-click' class='buttom-click'>
-        <sl-button variant="primary" href="/api/index.php" >ย้อนกลับ</sl-button>
-    
-        
-        <sl-button variant="primary" href="/api/index.php">ตกลง</sl-button>
-    </div>
 
         <footer class="site-footer">
             <div class="footer-inner bg-white">

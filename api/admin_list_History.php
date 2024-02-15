@@ -50,6 +50,7 @@
     text-align: center;
     margin-bottom: 2rem;    
 }
+
     </style>
 <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -74,7 +75,7 @@
                         <a href="#" onclick="logout()"> <i class="menu-icon fa fa-sign-in"></i>Logout </a>
                     </li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
         </nav>
     </aside>
 
@@ -102,7 +103,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>History Page</h1>
                             </div>
                         </div>
                     </div>
@@ -116,17 +117,17 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Data Table</strong>
+                        <strong class="card-title">ตารางแสดงประวัติการยืม - คืน</strong>
                     </div>
                     <div class="card-body">
-                        <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                        <table id="bootstrap-data" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th>Receipt Number</th>
                                     <th>Email</th>
                                     <th>product</th>
                                     <th>quantity</th>
-
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody id="table-body">
@@ -141,12 +142,12 @@
 </div><!-- .content -->
 
 
-    <div id='buttom-click' class='buttom-click'>
+<!--     <div id='buttom-click' class='buttom-click'>
         <sl-button variant="primary" href="/api/index.php" >ย้อนกลับ</sl-button>
     
         
         <sl-button variant="primary" href="/api/index.php">ตกลง</sl-button>
-    </div>
+    </div> -->
 
         <footer class="site-footer">
             <div class="footer-inner bg-white">

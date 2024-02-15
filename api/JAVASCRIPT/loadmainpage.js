@@ -84,37 +84,40 @@ onValue(dataUserRef, snapshot => {
 });
 
 function populateTable() {
-    const tableBody = document.querySelector('.table tbody');
+  const tableBody = document.querySelector('.table tbody');
+  
+  // Clear table body
+  tableBody.innerHTML = '';
+
+  // Populate table with user data
+  onValue(dataUserRef, snapshot => {
+      let serialNumber = 1;
     
-    // Clear table body
-    tableBody.innerHTML = '';
-  
-    // Populate table with user data
-    onValue(dataUserRef, snapshot => {
-        let serialNumber = 1;
-      
       snapshot.forEach(userSnapshot => {
-        const userData = userSnapshot.val();
-        const userName = Object.keys(userData)[0]; // Get user email
-        const products = userData[userName].products;
-  
-        products.forEach(product => {
-          const { productName, quantity } = product;
-          
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td class="serial">${serialNumber}</td>
-            <td><span class="name">${userName}</span></td>
-            <td><span class="product">${productName}</span></td>
-            <td><span class="quantity">${quantity}</span></td>
-          `;
-          
-          tableBody.appendChild(row);
-          serialNumber++;
-        });
+          const userData = userSnapshot.val();
+          const userName = Object.keys(userData)[0]; // Get user email
+          const products = userData[userName].products;
+
+          products.forEach(product => {
+              const { productName, quantity, timestamp } = product; // Extract timestamp
+              const receiptNumber = userSnapshot.key;
+              
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                  <td class="serial">${serialNumber}</td>
+                  <td><span class="receiptNumber">${receiptNumber}</span></td> 
+                  <td><span class="name">${userName}</span></td>
+                  <td><span class="product">${productName}</span></td>
+                  <td><span class="quantity">${quantity}</span></td>
+              `;
+              
+              tableBody.appendChild(row);
+              serialNumber++;
+          });
       });
-    });
-  }
+  });
+}
+
   
   // Call populateTable function to populate the table once the page loads
   document.addEventListener('DOMContentLoaded', populateTable);

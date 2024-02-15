@@ -148,7 +148,7 @@
                 </div>
             </div>
             <div class="user-area dropdown float-right">
-                        <a href="user_cart-list.php"> <span class="count"></span>
+                        <a href="user_cart-list.php"> <!-- <span class="count"></span> -->
                             <img class="user-avatar rounded-circle" src="https://e7.pngegg.com/pngimages/772/45/png-clipart-shopping-cart-shopping-centre-icon-shopping-cart-text-retail.png" alt="User Avatar">
                         
                           </a>

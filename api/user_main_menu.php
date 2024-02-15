@@ -218,6 +218,7 @@
                                             <thead>
                                                 <tr>
                                                     <th class="serial">ID</th>
+                                                    <th>Receipt Number</th>
                                                     <th>Email</th>
                                                     <th>Product</th>
                                                     <th>Qantity</th>

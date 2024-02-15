@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref, get, onValue } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
+import { getDatabase, ref, get, onValue, set,update } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAL8OSkYagZe97HqUt5WEaTmuE4mbrHDqI",
@@ -32,37 +32,41 @@ function deleteReceipt(userId, productId) {
         });
 }
 
-function approveReceipt(userId, productId) {
-    const userRef = database.ref('datauser').child(userId).child(productId);
-    const productRef = database.ref('products').child(productId);
-    
-    // Start a transaction
-    database.ref().transaction(function(transaction) {
-        if (transaction) {
-            // ดึงข้อมูล quantity ของสินค้าใน datauser
-            const userQuantity = transaction.datauser[userId][productId].quantity;
-            
-            // ดึงข้อมูล quantity ของสินค้าใน products
-            const productQuantity = transaction.products[productId].quantity;
-            
-            // ตรวจสอบว่ามีจำนวนสินค้าพอหรือไม่
-            if (userQuantity > 0 && productQuantity > 0) {
-                // ลบค่า quantity ของสินค้าใน datauser และ products
-                transaction.datauser[userId][productId].quantity = userQuantity - 1;
-                transaction.products[productId].quantity = productQuantity - 1;
+window.updateFirebaseData = async function(productName, quantity) {
+
+      // ดึงข้อมูล products จาก Firebase
+      const productsRef = ref(database, 'products/products');
+      const productsSnapshot = await get(productsRef);
+      if (productsSnapshot.exists()) {
+        const productsData = productsSnapshot.val();
+        
+        // ค้นหา productName ในโหนดย่อยของ products
+        for (const productKey in productsData) {
+          const product = productsData[productKey];
+          if (product.name === productName) {
+            // หากพบ productName ที่ตรงกัน ให้หัก quantity
+            const updatedQuantity = product.quantity - quantity;
+            if (updatedQuantity >= 0) {
+              // อัปเดตค่า quantity ใน Firebase
+              await update(ref(database, `products/products/${productKey}`), { quantity: updatedQuantity });
+              console.log(`Updated quantity for ${productName} to ${updatedQuantity}`);
+            } else {
+              console.error(`Insufficient quantity for ${productName}`);
             }
+            // หลุดออกจากลูปหลังจากพบ productName ที่ตรงกัน
+            break;
+          }
         }
-        return transaction;
-    }).then(function(transactionResult) {
-        if (transactionResult.committed) {
-            console.log('Transaction committed successfully.');
-        } else {
-            console.log('Transaction aborted.');
-        }
-    }).catch(function(error) {
-        console.error('Transaction failed: ', error);
-    });
+        // ถ้าไม่พบ productName ที่ตรงกัน
+        console.error(`Product ${productName} not found in database`);
+      } else {
+        console.error("No products data found in database");
+      }
+
 }
+
+
+
 
 // แก้ไขฟังก์ชัน renderData() เพื่อเรียกใช้ deleteReceipt() ที่ถูกนิยามไว้ด้านบน
 function renderData(snapshot) {
@@ -87,8 +91,10 @@ function renderData(snapshot) {
                     <td>${email}</td>
                     <td>${combinedProducts}</td>
                     <td>${combinedQuantities}</td>
-                    <td><button onclick="approveReceipt('${userId}', '${productId}')">อนุมัติ</button></td>
+                    <td><button onclick="updateFirebaseData('${combinedProducts}', ${combinedQuantities})">อนุมัติ</button></td>
                     <td><button onclick="deleteReceipt('${userId}', '${productId}')">ลบ</button></td>
+                    <td><button onclick="('${userId}', '${productId}')">คืน</button></td>
+
                 `;
                 tableBody.appendChild(row);
             } else {
@@ -100,8 +106,10 @@ function renderData(snapshot) {
                         <td>${product.email}</td>
                         <td>${product.productName}</td>
                         <td>${product.quantity}</td>
-                        <td><button onclick="approveReceipt('${userId}', '${productId}')">อนุมัติ</button></td>
+                        <td><button onclick="updateFirebaseData('${product.productName}', ${product.quantity})">อนุมัติ</button></td>
                         <td><button onclick="deleteReceipt('${userId}', '${productId}')">ลบ</button></td>
+                        <td><button onclick="('${userId}', '${productId}')">คืน</button></td>
+
                     `;
                     tableBody.appendChild(row);
                 });

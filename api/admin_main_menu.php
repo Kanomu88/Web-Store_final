@@ -124,7 +124,7 @@
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
                 </div>
             </div>
-            <div class="top-right">
+            <!-- <div class="top-right">
                 <div class="header-menu">
                 <div class="user-area dropdown float-right">
                         <a href="list.php"  > <span class="count">13</span>
@@ -134,7 +134,7 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
         </header>
         <!-- /#header -->
         <!-- Content -->
@@ -233,6 +233,7 @@
                                             <thead>
                                                 <tr>
                                                     <th class="serial">ID</th>
+                                                    <th>Receipt Number</th>
                                                     <th>Email</th>
                                                     <th>Product</th>
                                                     <th>Qantity</th>
