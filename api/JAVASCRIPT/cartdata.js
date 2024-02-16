@@ -39,7 +39,7 @@ function createGrid(parent) {
 }
 
 // Function to create a new flex container with product data
-function createProductCard(name, quantity, imageURL, key) {
+function createProductCard(name, quantity, imageURL, key , title) {
   const flexDiv = document.createElement('div');
   flexDiv.classList.add('flex', 'items-center', 'justify-center');
 
@@ -105,13 +105,15 @@ get(productsRef).then((snapshot) => {
       const productName = product.name;
       const productQuantity = product.quantity;
       const productImageURL = product.imageURL;
+      const productt = product.title;
+
 
       if (count === 0 || count % 4 === 0) {
         currentRow = createRow(productList);
         currentGrid = createGrid(currentRow);
       }
 
-      const productCard = createProductCard(productName, productQuantity, productImageURL, key);
+      const productCard = createProductCard(productName, productQuantity, productImageURL, key,productt);
       currentGrid.appendChild(productCard);
       count++;
 
@@ -131,8 +133,8 @@ function createDialog() {
   dialog.label = 'productName';
   dialog.classList.add('dialog-overview');
 
-  const content = document.createTextNode('Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-  dialog.appendChild(content);
+/*   const content = document.createTextNode('Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+  dialog.appendChild(content); */
 
   const formatNumberDiv = document.createElement('div');
   formatNumberDiv.classList.add('format-number-overview');
@@ -211,6 +213,8 @@ function createDialog() {
       const userSelectedProductsRef = ref(database, 'selectedProducts/' + auth.currentUser.uid + '/products/');
       push(userSelectedProductsRef, selectedProductData)
         .then(() => {
+          alert('เพิ่มรายการสินค้าสำเร็จ');
+
           console.log('New product node added successfully!');
         })
         .catch((error) => {

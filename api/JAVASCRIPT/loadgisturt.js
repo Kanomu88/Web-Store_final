@@ -175,8 +175,8 @@ window.addupdateFirebaseData = async function(userId) {
                           `;
   
                           $('body').append(alertHTML); // Append the alert HTML to the body
-                        remove(userReceiptRef)
-                          setTimeout(function() {
+/*                         remove(userReceiptRef)
+ */                          setTimeout(function() {
                             $('.sufee-alert').alert('close');
                         }, 1800);
                               console.log(`Updated quantity for ${productName} to ${updatedQuantity}`);

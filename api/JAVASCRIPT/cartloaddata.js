@@ -63,7 +63,7 @@ function checkAuthentication() {
                     // If no data exists, display "No data" message
                     const newRow = table.insertRow();
                     const noDataCell = newRow.insertCell();
-                    noDataCell.textContent = "ไม่มีข้อมูล";
+                    noDataCell.textContent = "ไม่มี+9ข้อมูล";
                 }
             }).catch((error) => {
                 console.error('Error getting product list: ', error);
