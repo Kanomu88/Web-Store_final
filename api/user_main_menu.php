@@ -137,7 +137,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text">$<span id="productCount"></span></span></div>
+                                            <div class="stat-text"><span id="productCount"></span></span></div>
                                             <div class="stat-heading">Equipment</div>
                                         </div>
                                     </div>
