@@ -39,7 +39,8 @@ function createGrid(parent) {
 }
 
 // Function to create a new flex container with product data
-function createProductCard(name, quantity, imageURL, key , title) {
+// Function to create a new flex container with product data
+function createProductCard(name, quantity, imageURL, key, title) {
   const flexDiv = document.createElement('div');
   flexDiv.classList.add('flex', 'items-center', 'justify-center');
 
@@ -54,6 +55,12 @@ function createProductCard(name, quantity, imageURL, key , title) {
 
   const strong = document.createElement('strong');
   strong.textContent = name;
+
+  const titleSpan = document.createElement('span');
+  titleSpan.textContent = title;
+
+  const titleBr = document.createElement('br'); // Create line break element
+  const titleBr2 = document.createElement('br'); // Create another line break element
 
   const footerDiv = document.createElement('div');
   footerDiv.slot = 'footer';
@@ -70,8 +77,12 @@ function createProductCard(name, quantity, imageURL, key , title) {
 
   footerDiv.appendChild(moreInfoButton);
   footerDiv.appendChild(quantitySpan);
+
   card.appendChild(image);
   card.appendChild(strong);
+  card.appendChild(titleBr); // Append line break
+  card.appendChild(titleBr2); // Append another line break
+  card.appendChild(titleSpan); // Append title
   card.appendChild(footerDiv);
   flexDiv.appendChild(card);
 
